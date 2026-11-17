@@ -3,13 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ARP 6 — System architecture</title>
+<title>ARP 6 — Documentation</title>
+<meta name="description" content="Interactive ARP 6 documentation: click a block in the system architecture to open its detail drawing.">
+<meta name="color-scheme" content="light">
 <style>
   :root{
     --ink:#1c2655;
     --muted:#5c6a9a;
     --line:#ccd5f0;
-    --paper:#eef1fb;
+    --paper:#e9edf9;
     --accent:#3f73e8;
     --ease:cubic-bezier(.22,.61,.24,1);
   }
@@ -20,328 +22,180 @@
     font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
     color:var(--ink);
     background:var(--paper);
-    display:flex;
-    flex-direction:column;
-    min-height:100%;
+    display:flex;flex-direction:column;
+    overflow:hidden;              /* the stage owns the viewport */
   }
 
-  /* ---------- chrome ---------- */
+  /* ------------------------------------------------------------- top bar */
   header{
     flex:0 0 auto;
-    display:flex;
-    align-items:center;
-    gap:14px;
-    padding:14px 22px;
+    display:flex;align-items:center;gap:14px;
+    padding:13px 20px;
     background:#fff;
     border-bottom:1px solid var(--line);
+    position:relative;z-index:3;
   }
-  .brand{font-weight:700;letter-spacing:.14em;font-size:12px;color:var(--accent)}
-  nav.crumbs{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);min-width:0}
-  nav.crumbs button{
+  .brand{
+    font-weight:700;letter-spacing:.14em;font-size:12px;
+    color:var(--accent);flex:0 0 auto;
+  }
+  #crumbs{
+    display:flex;align-items:center;gap:8px;flex-wrap:nowrap;
+    font-size:14px;color:var(--muted);min-width:0;overflow:hidden;
+  }
+  #crumbs button{
     font:inherit;color:var(--accent);background:none;border:0;padding:0;
-    cursor:pointer;border-radius:4px;
+    cursor:pointer;white-space:nowrap;border-radius:4px;
   }
-  nav.crumbs button:hover{text-decoration:underline}
-  nav.crumbs .sep{opacity:.5}
-  nav.crumbs .here{color:var(--ink);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  nav.crumbs .step{display:none;align-items:center;gap:8px}
-  body[data-view="detail"] nav.crumbs .step{display:flex}
-  .back{
+  #crumbs button:hover{text-decoration:underline}
+  #crumbs .sep{opacity:.45;flex:0 0 auto}
+  #crumbs .here{
+    color:var(--ink);font-weight:600;white-space:nowrap;
+    overflow:hidden;text-overflow:ellipsis;
+  }
+  #back{
     margin-left:auto;flex:0 0 auto;
-    display:none;align-items:center;gap:7px;
+    display:flex;align-items:center;gap:7px;
     font:inherit;font-size:14px;font-weight:600;
     color:var(--ink);background:#fff;
     border:1px solid var(--line);border-radius:999px;
-    padding:7px 15px 7px 12px;cursor:pointer;
+    padding:7px 15px 7px 11px;cursor:pointer;
     transition:background 140ms,border-color 140ms;
   }
-  body[data-view="detail"] .back{display:flex}
-  .back:hover{background:#f4f7ff;border-color:var(--accent)}
-  .back svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  #back[hidden]{display:none}
+  #back:hover{background:#f4f7ff;border-color:var(--accent)}
+  #back svg{
+    width:14px;height:14px;fill:none;stroke:currentColor;
+    stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;
+  }
 
-  /* ---------- stage ---------- */
-  main{
-    flex:1 1 auto;
-    display:flex;align-items:center;justify-content:center;
-    padding:22px;min-height:0;
-  }
-  .stage{
+  /* -------------------------------------------------------------- stage */
+  main{flex:1 1 auto;min-height:0;display:flex;padding:18px}
+  #stage{
     position:relative;
-    width:100%;max-width:1680px;
-    aspect-ratio:16/9;
-    max-height:100%;
-    container-type:inline-size;
-    border-radius:14px;
-    overflow:hidden;
-    background:#eef1fb;
-    box-shadow:0 18px 50px -24px rgba(28,38,85,.45),0 0 0 1px var(--line);
-    /* 1 unit == 1 user unit of the 1920x1080 artwork */
-    --u:calc(100cqw / 1920);
+    flex:1 1 auto;min-height:0;min-width:0;
   }
+
+  /* One layer per illustration. Position and size are set in pixels by app.js,
+     because the drawings do not share a coordinate space. */
   .layer{
-    position:absolute;inset:0;
+    position:absolute;
     will-change:transform,opacity;
     backface-visibility:hidden;
+    border-radius:12px;
+    overflow:visible;
+    box-shadow:0 18px 44px -22px rgba(28,38,85,.5),0 0 0 1px rgba(28,38,85,.08);
   }
-  .layer img{display:block;width:100%;height:100%}
   .layer[hidden]{display:none}
-  #detail{pointer-events:none}
-  body[data-view="detail"] #detail{pointer-events:auto}
+  .layer img{
+    display:block;width:100%;height:100%;
+    border-radius:inherit;
+    user-select:none;-webkit-user-drag:none;
+  }
+  .layer:not(.is-current){pointer-events:none}
 
-  /* ---------- hotspot over ADAU1787_L (x650 y400 w340 h190 rx16) ---------- */
+  /* ------------------------------------------------------------ hotspots */
   .hotspot{
     position:absolute;
-    left:33.8542%;top:37.0370%;
-    width:17.7083%;height:17.5926%;
-    border-radius:calc(16 * var(--u));
-    border:calc(3 * var(--u)) solid transparent;
-    cursor:pointer;
+    margin:0;padding:0;
     background:transparent;
-    padding:0;
+    border:3px solid transparent;
+    border-radius:11px;
+    cursor:pointer;
     transition:border-color 160ms ease,box-shadow 220ms ease,transform 160ms var(--ease);
   }
   .hotspot:hover,.hotspot:focus-visible{
     outline:none;
-    border-color:#ffffff;
-    box-shadow:0 0 0 calc(3 * var(--u)) rgba(63,115,232,.55),
-               0 calc(8 * var(--u)) calc(24 * var(--u)) rgba(28,38,85,.35);
-    transform:translateY(calc(-2 * var(--u)));
+    border-color:#fff;
+    box-shadow:0 0 0 3px rgba(63,115,232,.55),0 10px 26px rgba(28,38,85,.35);
+    transform:translateY(-2px);
   }
   .hotspot .tip{
-    position:absolute;left:50%;top:calc(100% + 10 * var(--u));
+    position:absolute;left:50%;top:calc(100% + 11px);
     transform:translate(-50%,6px);
     white-space:nowrap;
     background:var(--ink);color:#fff;
-    font-size:calc(17 * var(--u));font-weight:600;
-    padding:calc(7 * var(--u)) calc(14 * var(--u));
-    border-radius:calc(8 * var(--u));
+    font-size:13px;font-weight:600;line-height:1;
+    padding:8px 13px;border-radius:7px;
     opacity:0;pointer-events:none;
-    transition:opacity 160ms ease,transform 160ms var(--ease);
+    box-shadow:0 8px 22px -8px rgba(28,38,85,.7);
+    transition:opacity 150ms ease,transform 150ms var(--ease);
   }
   .hotspot .tip::before{
-    content:"";position:absolute;left:50%;top:calc(-5 * var(--u));
-    width:calc(10 * var(--u));height:calc(10 * var(--u));
-    background:var(--ink);transform:translateX(-50%) rotate(45deg);
+    content:"";position:absolute;left:50%;top:-4px;
+    width:9px;height:9px;background:var(--ink);
+    transform:translateX(-50%) rotate(45deg);
   }
   .hotspot:hover .tip,.hotspot:focus-visible .tip{opacity:1;transform:translate(-50%,0)}
 
-  /* first-run pulse, so it reads as clickable */
-  .hotspot::after{
-    content:"";position:absolute;inset:calc(-4 * var(--u));
-    border-radius:inherit;
-    border:calc(3 * var(--u)) solid rgba(63,115,232,.9);
+  /* a few beats of pulse on the top-level drawing, so it reads as clickable */
+  body[data-depth="0"] .layer.is-current .hotspot::after{
+    content:"";position:absolute;inset:-4px;
+    border:3px solid rgba(63,115,232,.9);border-radius:inherit;
     animation:pulse 2.1s var(--ease) 3;
     pointer-events:none;
   }
-  .hotspot.touched::after,.hotspot:hover::after{animation:none;opacity:0}
+  .hotspot:hover::after{display:none}
   @keyframes pulse{
-    0%{opacity:0;transform:scale(.97)}
+    0%{opacity:0;transform:scale(.98)}
     35%{opacity:1}
-    100%{opacity:0;transform:scale(1.11)}
+    100%{opacity:0;transform:scale(1.1)}
   }
 
+  /* ------------------------------------------------------------- footer */
   footer{
     flex:0 0 auto;
-    padding:0 22px 16px;
+    padding:0 20px 14px;text-align:center;
     font-size:12.5px;color:var(--muted);
-    text-align:center;
   }
+  body[data-depth="0"] .hint-detail,
+  body:not([data-depth="0"]) .hint-root{display:none}
   kbd{
     font:inherit;font-size:11.5px;
-    background:#fff;border:1px solid var(--line);
-    border-bottom-width:2px;border-radius:5px;
-    padding:1px 6px;color:var(--ink);
+    background:#fff;border:1px solid var(--line);border-bottom-width:2px;
+    border-radius:5px;padding:1px 6px;color:var(--ink);
   }
-  @media (max-width:640px){
-    header{padding:11px 14px;gap:10px}
-    nav.crumbs{font-size:12.5px}
-    main{padding:12px}
+
+  /* data.js failed to load or is malformed */
+  body[data-error] main::after{
+    content:"The content map (data.js) could not be read. Check the browser console.";
+    margin:auto;font-size:14px;color:#b4253a;
+  }
+
+  @media (max-width:680px){
+    header{padding:10px 13px;gap:9px}
+    #crumbs{font-size:12.5px}
+    #back span.back-label{display:none}
+    #back{padding:7px 11px}
+    main{padding:10px}
   }
   @media (prefers-reduced-motion:reduce){
-    .hotspot::after{animation:none}
+    body[data-depth="0"] .layer.is-current .hotspot::after{animation:none}
+    .hotspot{transition:none}
   }
 </style>
 </head>
-<body data-view="arch">
+<body>
 
 <header>
   <span class="brand">ARP&nbsp;6</span>
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <button type="button" id="crumb-root">System architecture</button>
-    <span class="step"><span class="sep">/</span><span class="here">ADAU1787 (L) — codec signal flow</span></span>
-  </nav>
-  <button class="back" type="button" id="back">
+  <nav id="crumbs" aria-label="Breadcrumb"></nav>
+  <button id="back" type="button" hidden>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-    Back to architecture
+    <span class="back-label">Back</span>
   </button>
 </header>
 
 <main>
-  <div class="stage" id="stage">
-
-    <div class="layer" id="arch">
-      <img src="assets/arp6-system-architecture-flat.svg" alt="ARP 6 system architecture: earphones, ADAU1787 codecs, Raspberry Pi 5 with AI HAT and the smartphone link.">
-      <button class="hotspot" id="hotspot" type="button"
-              aria-label="Open the ADAU1787 (L) codec signal flow">
-        <span class="tip">ADAU1787 (L) — view signal flow</span>
-      </button>
-    </div>
-
-    <div class="layer" id="detail" hidden>
-      <img src="assets/adau1787-left-codec-new.svg" alt="ADAU1787 left codec signal flow: capture lane from the earpiece to the Raspberry Pi, playback lane back to the earpiece.">
-    </div>
-
-  </div>
+  <div id="stage"></div>
 </main>
 
 <footer>
-  Click the <strong>ADAU1787&nbsp;(L)</strong> block to open its signal flow · press <kbd>Esc</kbd> or your browser's back button to return
+  <span class="hint-root">Click a highlighted block to open its detail drawing</span>
+  <span class="hint-detail">Press <kbd>Esc</kbd> or use your browser's back button to go back</span>
 </footer>
 
-<script>
-(function(){
-  "use strict";
-
-  var body    = document.body,
-      arch    = document.getElementById("arch"),
-      detail  = document.getElementById("detail"),
-      hotspot = document.getElementById("hotspot"),
-      back    = document.getElementById("back"),
-      root    = document.getElementById("crumb-root");
-
-  var HASH = "#adau1787-left";
-
-  /* Geometry, in the 1920x1080 user space both drawings share.
-     source block : ADAU1787_L   x650 y400  w340  h190  -> centre 820,495
-     target frame : Codec_frame  x430 y260  w1150 h730  -> centre 1005,625
-     The detail drawing starts scaled and offset so its codec frame sits exactly
-     on the blue block, then grows to natural size: the block opens up.        */
-  var SCALE = 340 / 1150,                              /*  0.29565  */
-      DX    = ((820 - 1005) / 1920 * 100).toFixed(4),  /* -9.6354 % */
-      DY    = ((495 - 625)  / 1080 * 100).toFixed(4);  /* -12.0370 % */
-
-  var FROM = "translate(" + DX + "%," + DY + "%) scale(" + SCALE + ")";
-  var TO   = "translate(0%,0%) scale(1)";
-
-  arch.style.transformOrigin   = (820 / 1920 * 100) + "% " + (495 / 1080 * 100) + "%";
-  detail.style.transformOrigin = (1005 / 1920 * 100) + "% " + (625 / 1080 * 100) + "%";
-
-  var EASE = "cubic-bezier(.22,.61,.24,1)";
-  function dur(){
-    return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 620;
-  }
-
-  var busy = false, view = "arch";
-
-  function animate(el, frames, ms){
-    if (!el.animate) return Promise.resolve();
-    return el.animate(frames, {duration: ms, easing: EASE}).finished.catch(function(){});
-  }
-
-  function toDetail(){
-    if (busy || view === "detail") return;
-    busy = true; view = "detail";
-    body.dataset.view = "detail";
-    hotspot.classList.add("touched");
-
-    var ms = dur();
-    detail.hidden = false;
-    detail.style.transform = FROM;
-    detail.style.opacity = "0";
-
-    Promise.all([
-      /* the architecture pushes in toward the block and dissolves */
-      animate(arch, [
-        {transform:"scale(1)",   opacity:1},
-        {transform:"scale(1.9)", opacity:0}
-      ], ms),
-      /* the block opens into the codec diagram */
-      animate(detail, [
-        {transform:FROM, opacity:0},
-        {transform:FROM, opacity:1, offset:.28},
-        {transform:TO,   opacity:1}
-      ], ms)
-    ]).then(function(){
-      arch.hidden = true;
-      arch.style.transform = "";
-      arch.style.opacity = "";
-      detail.style.transform = TO;
-      detail.style.opacity = "1";
-      back.focus({preventScroll:true});
-      busy = false;
-    });
-  }
-
-  function toArch(){
-    if (busy || view === "arch") return;
-    busy = true; view = "arch";
-    body.dataset.view = "arch";
-
-    var ms = dur();
-    arch.hidden = false;
-    arch.style.opacity = "0";
-
-    Promise.all([
-      animate(detail, [
-        {transform:TO,   opacity:1},
-        {transform:FROM, opacity:1, offset:.72},
-        {transform:FROM, opacity:0}
-      ], ms),
-      animate(arch, [
-        {transform:"scale(1.9)", opacity:0},
-        {transform:"scale(1)",   opacity:1}
-      ], ms)
-    ]).then(function(){
-      detail.hidden = true;
-      detail.style.transform = "";
-      detail.style.opacity = "";
-      arch.style.transform = "";
-      arch.style.opacity = "";
-      hotspot.focus({preventScroll:true});
-      busy = false;
-    });
-  }
-
-  /* ---- routing ----
-     The detail view owns a hash, so the browser's back button and deep links
-     both work. Hash assignment is used rather than history.pushState, because
-     pushState is rejected on file:// origins and this page must also run when
-     it is opened straight off a disk or a network share.                    */
-  var steppedIn = false;
-
-  hotspot.addEventListener("click", function(){
-    if (location.hash === HASH) return;
-    steppedIn = true;
-    location.hash = HASH;          /* fires hashchange -> toDetail() */
-  });
-
-  function goBack(){
-    if (location.hash !== HASH) { toArch(); return; }
-    if (steppedIn) history.back(); /* keeps the history stack clean */
-    else location.hash = "";       /* arrived by deep link: no entry to pop */
-  }
-  back.addEventListener("click", goBack);
-  root.addEventListener("click", goBack);
-
-  window.addEventListener("hashchange", function(){
-    if (location.hash === HASH) toDetail(); else toArch();
-  });
-
-  document.addEventListener("keydown", function(e){
-    if (e.key === "Escape" && view === "detail") goBack();
-  });
-
-  /* deep link straight into the detail view */
-  if (location.hash === HASH){
-    body.dataset.view = "detail";
-    arch.hidden = true;
-    detail.hidden = false;
-    detail.style.transform = TO;
-    detail.style.opacity = "1";
-    view = "detail";
-    hotspot.classList.add("touched");
-  }
-})();
-</script>
+<script src="data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

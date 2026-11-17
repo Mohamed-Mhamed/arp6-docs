@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ARP 6 — Documentation</title>
-<meta name="description" content="Interactive ARP 6 documentation: click a block in the system architecture to open its detail drawing.">
+<meta name="description" content="Interactive ARP 6 documentation: click a block in an illustration to open its detail drawing.">
 <meta name="color-scheme" content="light">
 <style>
   :root{
@@ -13,6 +13,7 @@
     --line:#ccd5f0;
     --paper:#e9edf9;
     --accent:#3f73e8;
+    --orange:#e8742a;
     --ease:cubic-bezier(.22,.61,.24,1);
   }
   *{box-sizing:border-box}
@@ -23,7 +24,7 @@
     color:var(--ink);
     background:var(--paper);
     display:flex;flex-direction:column;
-    overflow:hidden;              /* the stage owns the viewport */
+    overflow:hidden;
   }
 
   /* ------------------------------------------------------------- top bar */
@@ -33,12 +34,9 @@
     padding:13px 20px;
     background:#fff;
     border-bottom:1px solid var(--line);
-    position:relative;z-index:3;
+    position:relative;z-index:5;
   }
-  .brand{
-    font-weight:700;letter-spacing:.14em;font-size:12px;
-    color:var(--accent);flex:0 0 auto;
-  }
+  .brand{font-weight:700;letter-spacing:.14em;font-size:12px;color:var(--accent);flex:0 0 auto}
   #crumbs{
     display:flex;align-items:center;gap:8px;flex-wrap:nowrap;
     font-size:14px;color:var(--muted);min-width:0;overflow:hidden;
@@ -49,10 +47,7 @@
   }
   #crumbs button:hover{text-decoration:underline}
   #crumbs .sep{opacity:.45;flex:0 0 auto}
-  #crumbs .here{
-    color:var(--ink);font-weight:600;white-space:nowrap;
-    overflow:hidden;text-overflow:ellipsis;
-  }
+  #crumbs .here{color:var(--ink);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   #back{
     margin-left:auto;flex:0 0 auto;
     display:flex;align-items:center;gap:7px;
@@ -64,76 +59,62 @@
   }
   #back[hidden]{display:none}
   #back:hover{background:#f4f7ff;border-color:var(--accent)}
-  #back svg{
-    width:14px;height:14px;fill:none;stroke:currentColor;
-    stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;
-  }
+  #back svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 
   /* -------------------------------------------------------------- stage */
-  main{flex:1 1 auto;min-height:0;display:flex;padding:18px}
-  #stage{
-    position:relative;
-    flex:1 1 auto;min-height:0;min-width:0;
-  }
+  main{flex:1 1 auto;min-height:0;display:flex;padding:16px}
+  #stage{position:relative;flex:1 1 auto;min-height:0;min-width:0}
 
-  /* One layer per illustration. Position and size are set in pixels by app.js,
-     because the drawings do not share a coordinate space. */
   .layer{
     position:absolute;
     will-change:transform,opacity;
     backface-visibility:hidden;
     border-radius:12px;
-    overflow:visible;
     box-shadow:0 18px 44px -22px rgba(28,38,85,.5),0 0 0 1px rgba(28,38,85,.08);
   }
   .layer[hidden]{display:none}
-  .layer img{
-    display:block;width:100%;height:100%;
-    border-radius:inherit;
-    user-select:none;-webkit-user-drag:none;
-  }
+  .layer img{display:block;width:100%;height:100%;border-radius:inherit;user-select:none;-webkit-user-drag:none}
   .layer:not(.is-current){pointer-events:none}
 
   /* ------------------------------------------------------------ hotspots */
   .hotspot{
-    position:absolute;
-    margin:0;padding:0;
-    background:transparent;
-    border:3px solid transparent;
-    border-radius:11px;
+    position:absolute;margin:0;padding:0;
+    background:transparent;border:3px solid transparent;border-radius:11px;
     cursor:pointer;
     transition:border-color 160ms ease,box-shadow 220ms ease,transform 160ms var(--ease);
   }
   .hotspot:hover,.hotspot:focus-visible{
-    outline:none;
-    border-color:#fff;
+    outline:none;border-color:#fff;
     box-shadow:0 0 0 3px rgba(63,115,232,.55),0 10px 26px rgba(28,38,85,.35);
     transform:translateY(-2px);
   }
   .hotspot .tip{
     position:absolute;left:50%;top:calc(100% + 11px);
-    transform:translate(-50%,6px);
-    white-space:nowrap;
+    transform:translate(-50%,6px);white-space:nowrap;
     background:var(--ink);color:#fff;
     font-size:13px;font-weight:600;line-height:1;
     padding:8px 13px;border-radius:7px;
     opacity:0;pointer-events:none;
     box-shadow:0 8px 22px -8px rgba(28,38,85,.7);
     transition:opacity 150ms ease,transform 150ms var(--ease);
-  }
-  .hotspot .tip::before{
-    content:"";position:absolute;left:50%;top:-4px;
-    width:9px;height:9px;background:var(--ink);
-    transform:translateX(-50%) rotate(45deg);
+    z-index:2;
   }
   .hotspot:hover .tip,.hotspot:focus-visible .tip{opacity:1;transform:translate(-50%,0)}
 
-  /* a few beats of pulse on the top-level drawing, so it reads as clickable */
-  body[data-depth="0"] .layer.is-current .hotspot::after{
+  /* a hotspot the drawing does not already show: draw the control itself */
+  .hotspot.is-button{
+    border:0;border-radius:50%;
+    background:linear-gradient(135deg,#fba24a,#e3691c);
+    box-shadow:0 8px 18px -6px rgba(28,38,85,.55);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hotspot.is-button:hover{transform:translateY(-3px) scale(1.06);box-shadow:0 12px 24px -6px rgba(28,38,85,.6)}
+  .hotspot.is-button svg{width:58%;height:58%;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+  body[data-depth="0"] .layer.is-current .hotspot:not(.is-button)::after{
     content:"";position:absolute;inset:-4px;
     border:3px solid rgba(63,115,232,.9);border-radius:inherit;
-    animation:pulse 2.1s var(--ease) 3;
-    pointer-events:none;
+    animation:pulse 2.1s var(--ease) 3;pointer-events:none;
   }
   .hotspot:hover::after{display:none}
   @keyframes pulse{
@@ -142,21 +123,61 @@
     100%{opacity:0;transform:scale(1.1)}
   }
 
-  /* ------------------------------------------------------------- footer */
+  /* --------------------------------------------------- on-canvas controls */
+  #back-fab{
+    flex:0 0 auto;
+    display:flex;align-items:center;gap:9px;
+    font:inherit;font-size:14px;font-weight:600;color:var(--ink);
+    background:rgba(255,255,255,.94);
+    border:1px solid var(--line);border-radius:999px;
+    padding:8px 16px 8px 9px;cursor:pointer;
+    box-shadow:0 10px 24px -12px rgba(28,38,85,.6);
+    transition:background 140ms,border-color 140ms,transform 140ms var(--ease);
+  }
+  #back-fab[hidden]{display:none}
+  #back-fab:hover{background:#fff;border-color:var(--accent);transform:translateX(-2px)}
+  #back-fab .fab-ring{
+    width:28px;height:28px;border-radius:50%;
+    background:var(--orange);display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+  }
+  #back-fab svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+  #back-fab .fab-label{max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+  #sectionbar{
+    flex:0 0 auto;
+    display:flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.95);
+    border:1px solid var(--line);border-radius:999px;
+    padding:6px 8px;
+    box-shadow:0 12px 28px -14px rgba(28,38,85,.65);
+  }
+  #sectionbar[hidden]{display:none}
+  #sectionbar button{
+    font:inherit;font-size:13px;font-weight:700;color:var(--ink);
+    background:#f4f7ff;border:1px solid var(--line);border-radius:999px;
+    padding:6px 13px;cursor:pointer;
+  }
+  #sectionbar button:hover:not(:disabled){background:#e9f0ff;border-color:var(--accent)}
+  #sectionbar button:disabled{opacity:.4;cursor:default}
+  #section-zoom{background:var(--orange)!important;border-color:var(--orange)!important;color:#fff!important}
+  #section-label{font-size:13px;font-weight:600;color:var(--muted);padding:0 10px;white-space:nowrap}
+
+  /* -------------------------------------------------------------- footer */
   footer{
     flex:0 0 auto;
-    padding:0 20px 14px;text-align:center;
+    display:flex;align-items:center;gap:14px;
+    padding:10px 20px 12px;
     font-size:12.5px;color:var(--muted);
   }
+  footer .hint{flex:1 1 auto;text-align:center}
   body[data-depth="0"] .hint-detail,
   body:not([data-depth="0"]) .hint-root{display:none}
   kbd{
-    font:inherit;font-size:11.5px;
-    background:#fff;border:1px solid var(--line);border-bottom-width:2px;
-    border-radius:5px;padding:1px 6px;color:var(--ink);
+    font:inherit;font-size:11.5px;background:#fff;
+    border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;
+    padding:1px 6px;color:var(--ink);
   }
 
-  /* data.js failed to load or is malformed */
   body[data-error] main::after{
     content:"The content map (data.js) could not be read. Check the browser console.";
     margin:auto;font-size:14px;color:#b4253a;
@@ -167,7 +188,9 @@
     #crumbs{font-size:12.5px}
     #back span.back-label{display:none}
     #back{padding:7px 11px}
-    main{padding:10px}
+    main{padding:8px}
+    #back-fab .fab-label{display:none}
+    #section-label{display:none}
   }
   @media (prefers-reduced-motion:reduce){
     body[data-depth="0"] .layer.is-current .hotspot::after{animation:none}
@@ -180,10 +203,6 @@
 <header>
   <span class="brand">ARP&nbsp;6</span>
   <nav id="crumbs" aria-label="Breadcrumb"></nav>
-  <button id="back" type="button" hidden>
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-    <span class="back-label">Back</span>
-  </button>
 </header>
 
 <main>
@@ -191,8 +210,24 @@
 </main>
 
 <footer>
-  <span class="hint-root">Click a highlighted block to open its detail drawing</span>
-  <span class="hint-detail">Press <kbd>Esc</kbd> or use your browser's back button to go back</span>
+  <button id="back-fab" type="button" hidden>
+    <span class="fab-ring">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    </span>
+    <span class="fab-label"></span>
+  </button>
+
+  <span class="hint">
+    <span class="hint-root">Click a highlighted block to open its detail drawing</span>
+    <span class="hint-detail">Press <kbd>Esc</kbd> or use your browser's back button to go back</span>
+  </span>
+
+  <div id="sectionbar" hidden>
+    <button id="section-zoom" type="button">Zoom in</button>
+    <button id="section-prev" type="button" aria-label="Previous section">&#8593;</button>
+    <span id="section-label"></span>
+    <button id="section-next" type="button" aria-label="Next section">&#8595;</button>
+  </div>
 </footer>
 
 <script src="data.js"></script>

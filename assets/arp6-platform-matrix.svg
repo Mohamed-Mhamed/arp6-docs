@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>ARP 6 - platform combinations</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#f0f3fe"/><stop offset="1" stop-color="#e3e8fa"/>
+  </linearGradient>
+  <linearGradient id="cBlue" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#5a8bf5"/><stop offset="1" stop-color="#2f5bd3"/>
+  </linearGradient>
+  <linearGradient id="cOrg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fba24a"/><stop offset="1" stop-color="#e3691c"/>
+  </linearGradient>
+  <linearGradient id="cNavy" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3b4a8a"/><stop offset="1" stop-color="#1c2655"/>
+  </linearGradient>
+  <linearGradient id="cGreen" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#46b68a"/><stop offset="1" stop-color="#23785a"/>
+  </linearGradient>
+  <linearGradient id="cPurple" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#9b86e8"/><stop offset="1" stop-color="#5a3fc0"/>
+  </linearGradient>
+  <linearGradient id="waveFade" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#7fd0f2"/><stop offset="1" stop-color="#6b4fd0"/>
+  </linearGradient>
+</defs>
+<g id="Background">
+<rect x="0" y="0" width="1920" height="1080" rx="0" fill="url(#bg)"/>
+<g id="Background_Iso_Grid" stroke="#d9e0f5" stroke-width="2" fill="none">
+<line x1="0" y1="-2221" x2="1920" y2="-3162"/>
+<line x1="0" y1="-2221" x2="1920" y2="-1280"/>
+<line x1="0" y1="-2121" x2="1920" y2="-3062"/>
+<line x1="0" y1="-2121" x2="1920" y2="-1180"/>
+<line x1="0" y1="-2021" x2="1920" y2="-2962"/>
+<line x1="0" y1="-2021" x2="1920" y2="-1080"/>
+<line x1="0" y1="-1921" x2="1920" y2="-2862"/>
+<line x1="0" y1="-1921" x2="1920" y2="-980"/>
+<line x1="0" y1="-1821" x2="1920" y2="-2762"/>
+<line x1="0" y1="-1821" x2="1920" y2="-880"/>
+<line x1="0" y1="-1721" x2="1920" y2="-2662"/>
+<line x1="0" y1="-1721" x2="1920" y2="-780"/>
+<line x1="0" y1="-1621" x2="1920" y2="-2562"/>
+<line x1="0" y1="-1621" x2="1920" y2="-680"/>
+<line x1="0" y1="-1521" x2="1920" y2="-2462"/>
+<line x1="0" y1="-1521" x2="1920" y2="-580"/>
+<line x1="0" y1="-1421" x2="1920" y2="-2362"/>
+<line x1="0" y1="-1421" x2="1920" y2="-480"/>
+<line x1="0" y1="-1321" x2="1920" y2="-2262"/>
+<line x1="0" y1="-1321" x2="1920" y2="-380"/>
+<line x1="0" y1="-1221" x2="1920" y2="-2162"/>
+<line x1="0" y1="-1221" x2="1920" y2="-280"/>
+<line x1="0" y1="-1121" x2="1920" y2="-2062"/>
+<line x1="0" y1="-1121" x2="1920" y2="-180"/>
+<line x1="0" y1="-1021" x2="1920" y2="-1962"/>
+<line x1="0" y1="-1021" x2="1920" y2="-80"/>
+<line x1="0" y1="-921" x2="1920" y2="-1862"/>
+<line x1="0" y1="-921" x2="1920" y2="20"/>
+<line x1="0" y1="-821" x2="1920" y2="-1762"/>
+<line x1="0" y1="-821" x2="1920" y2="120"/>
+<line x1="0" y1="-721" x2="1920" y2="-1662"/>
+<line x1="0" y1="-721" x2="1920" y2="220"/>
+<line x1="0" y1="-621" x2="1920" y2="-1562"/>
+<line x1="0" y1="-621" x2="1920" y2="320"/>
+<line x1="0" y1="-521" x2="1920" y2="-1462"/>
+<line x1="0" y1="-521" x2="1920" y2="420"/>
+<line x1="0" y1="-421" x2="1920" y2="-1362"/>
+<line x1="0" y1="-421" x2="1920" y2="520"/>
+<line x1="0" y1="-321" x2="1920" y2="-1262"/>
+<line x1="0" y1="-321" x2="1920" y2="620"/>
+<line x1="0" y1="-221" x2="1920" y2="-1162"/>
+<line x1="0" y1="-221" x2="1920" y2="720"/>
+<line x1="0" y1="-121" x2="1920" y2="-1062"/>
+<line x1="0" y1="-121" x2="1920" y2="820"/>
+<line x1="0" y1="-21" x2="1920" y2="-962"/>
+<line x1="0" y1="-21" x2="1920" y2="920"/>
+<line x1="0" y1="79" x2="1920" y2="-862"/>
+<line x1="0" y1="79" x2="1920" y2="1020"/>
+<line x1="0" y1="179" x2="1920" y2="-762"/>
+<line x1="0" y1="179" x2="1920" y2="1120"/>
+<line x1="0" y1="279" x2="1920" y2="-662"/>
+<line x1="0" y1="279" x2="1920" y2="1220"/>
+<line x1="0" y1="379" x2="1920" y2="-562"/>
+<line x1="0" y1="379" x2="1920" y2="1320"/>
+<line x1="0" y1="479" x2="1920" y2="-462"/>
+<line x1="0" y1="479" x2="1920" y2="1420"/>
+<line x1="0" y1="579" x2="1920" y2="-362"/>
+<line x1="0" y1="579" x2="1920" y2="1520"/>
+<line x1="0" y1="679" x2="1920" y2="-262"/>
+<line x1="0" y1="679" x2="1920" y2="1620"/>
+<line x1="0" y1="779" x2="1920" y2="-162"/>
+<line x1="0" y1="779" x2="1920" y2="1720"/>
+<line x1="0" y1="879" x2="1920" y2="-62"/>
+<line x1="0" y1="879" x2="1920" y2="1820"/>
+<line x1="0" y1="979" x2="1920" y2="38"/>
+<line x1="0" y1="979" x2="1920" y2="1920"/>
+<line x1="0" y1="1079" x2="1920" y2="138"/>
+<line x1="0" y1="1079" x2="1920" y2="2020"/>
+<line x1="0" y1="1179" x2="1920" y2="238"/>
+<line x1="0" y1="1179" x2="1920" y2="2120"/>
+<line x1="0" y1="1279" x2="1920" y2="338"/>
+<line x1="0" y1="1279" x2="1920" y2="2220"/>
+<line x1="0" y1="1379" x2="1920" y2="438"/>
+<line x1="0" y1="1379" x2="1920" y2="2320"/>
+<line x1="0" y1="1479" x2="1920" y2="538"/>
+<line x1="0" y1="1479" x2="1920" y2="2420"/>
+<line x1="0" y1="1579" x2="1920" y2="638"/>
+<line x1="0" y1="1579" x2="1920" y2="2520"/>
+<line x1="0" y1="1679" x2="1920" y2="738"/>
+<line x1="0" y1="1679" x2="1920" y2="2620"/>
+<line x1="0" y1="1779" x2="1920" y2="838"/>
+<line x1="0" y1="1779" x2="1920" y2="2720"/>
+<line x1="0" y1="1879" x2="1920" y2="938"/>
+<line x1="0" y1="1879" x2="1920" y2="2820"/>
+<line x1="0" y1="1979" x2="1920" y2="1038"/>
+<line x1="0" y1="1979" x2="1920" y2="2920"/>
+<line x1="0" y1="2079" x2="1920" y2="1138"/>
+<line x1="0" y1="2079" x2="1920" y2="3020"/>
+<line x1="0" y1="2179" x2="1920" y2="1238"/>
+<line x1="0" y1="2179" x2="1920" y2="3120"/>
+</g>
+</g>
+<g id="Title">
+<rect x="60" y="52" width="9" height="58" rx="4" fill="#e8742a"/>
+<text x="88" y="96" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#1c2655" text-anchor="start">Platform combinations</text>
+<text x="88" y="134" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#6b7aa8" text-anchor="start">Controllers and audio boards used across CRITIAS platforms — ARP 6 and the parts it uses are highlighted</text>
+</g>
+<g id="Matrix">
+<rect x="120" y="260" width="1677" height="596" rx="20" fill="#c3ccec"/>
+<rect x="120" y="250" width="1677" height="596" rx="20" fill="#ffffff"/>
+<rect x="120" y="378" width="1677" height="78" rx="0" fill="#f7f9ff"/>
+<rect x="120" y="534" width="1677" height="78" rx="0" fill="#f7f9ff"/>
+<rect x="120" y="690" width="1677" height="78" rx="0" fill="#f7f9ff"/>
+<rect x="1032" y="306" width="153" height="540" rx="0" fill="#ffe9d6"/>
+<rect x="1644" y="306" width="153" height="540" rx="0" fill="#ffe9d6"/>
+<rect x="120" y="250" width="300" height="128" rx="0" fill="#f4f7ff"/>
+<rect x="420" y="250" width="765" height="56" rx="0" fill="#e8edfb"/>
+<rect x="1185" y="250" width="612" height="56" rx="0" fill="#e4f0ec"/>
+<text x="802.5" y="287" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#3b4772" text-anchor="middle" letter-spacing="2">CONTROLLER</text>
+<text x="1491" y="287" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#3b4772" text-anchor="middle" letter-spacing="2">AUDIO</text>
+<text x="146" y="352" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#3b4772" text-anchor="start" letter-spacing="2">PLATFORM</text>
+<text x="496.5" y="351" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600" fill="#1c2655" text-anchor="middle">—</text>
+<text x="649.5" y="351" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600" fill="#1c2655" text-anchor="middle">ESP32 WROVER</text>
+<text x="802.5" y="351" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600" fill="#1c2655" text-anchor="middle">ESP32 P4</text>
+<text x="955.5" y="351" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600" fill="#1c2655" text-anchor="middle">RPi 4</text>
+<text x="1108.5" y="351" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#e8742a" text-anchor="middle">RPi 5</text>
+<text x="1261.5" y="351" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600" fill="#1c2655" text-anchor="middle">VE 0.0</text>
+<text x="1414.5" y="351" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600" fill="#1c2655" text-anchor="middle">VE 0.1</text>
+<text x="1567.5" y="351" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600" fill="#1c2655" text-anchor="middle">VE 0.2</text>
+<text x="1720.5" y="351" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#e8742a" text-anchor="middle">VE 0.3</text>
+<text x="146" y="425" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" fill="#1c2655" text-anchor="start">384 kHz Recorder</text>
+<circle cx="496.5" cy="417" r="16" fill="#dfe5f5"/>
+<path d="M490.5,411 L502.5,423 M502.5,411 L490.5,423" fill="none" stroke="#2a50bd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1261.5" cy="417" r="16" fill="#dfe5f5"/>
+<path d="M1255.5,411 L1267.5,423 M1267.5,411 L1255.5,423" fill="none" stroke="#2a50bd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="146" y="503" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" fill="#1c2655" text-anchor="start">ARP 5</text>
+<circle cx="649.5" cy="495" r="16" fill="#dfe5f5"/>
+<path d="M643.5,489 L655.5,501 M655.5,489 L643.5,501" fill="none" stroke="#2a50bd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1414.5" cy="495" r="16" fill="#dfe5f5"/>
+<path d="M1408.5,489 L1420.5,501 M1420.5,489 L1408.5,501" fill="none" stroke="#2a50bd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="146" y="581" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" fill="#1c2655" text-anchor="start">ARP 5*</text>
+<circle cx="802.5" cy="573" r="16" fill="#dfe5f5"/>
+<path d="M796.5,567 L808.5,579 M808.5,567 L796.5,579" fill="none" stroke="#2a50bd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1567.5" cy="573" r="16" fill="#dfe5f5"/>
+<path d="M1561.5,567 L1573.5,579 M1573.5,567 L1561.5,579" fill="none" stroke="#2a50bd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="146" y="659" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" fill="#1c2655" text-anchor="start">ARP 5+</text>
+<circle cx="802.5" cy="651" r="16" fill="#dfe5f5"/>
+<path d="M796.5,645 L808.5,657 M808.5,645 L796.5,657" fill="none" stroke="#2a50bd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1567.5" cy="651" r="16" fill="#dfe5f5"/>
+<path d="M1561.5,645 L1573.5,657 M1573.5,645 L1561.5,657" fill="none" stroke="#2a50bd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="146" y="737" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" fill="#1c2655" text-anchor="start">BioARP</text>
+<circle cx="955.5" cy="729" r="16" fill="#dfe5f5"/>
+<path d="M949.5,723 L961.5,735 M961.5,723 L949.5,735" fill="none" stroke="#2a50bd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1414.5" cy="729" r="16" fill="#dfe5f5"/>
+<path d="M1408.5,723 L1420.5,735 M1420.5,723 L1408.5,735" fill="none" stroke="#2a50bd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="120" y="768" width="1677" height="78" rx="0" fill="#fbe3cf"/>
+<rect x="120" y="768" width="9" height="78" rx="0" fill="#e8742a"/>
+<text x="146" y="815" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#e8742a" text-anchor="start">ARP 6</text>
+<circle cx="1108.5" cy="807" r="19" fill="url(#cOrg)"/>
+<path d="M1100.5,807 L1106.5,814 L1117.5,800" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1720.5" cy="807" r="19" fill="url(#cOrg)"/>
+<path d="M1712.5,807 L1718.5,814 L1729.5,800" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="Matrix_rules" stroke="#c3ccec" stroke-width="2">
+<line x1="120" y1="378" x2="1797" y2="378" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="120" y1="456" x2="1797" y2="456" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="120" y1="534" x2="1797" y2="534" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="120" y1="612" x2="1797" y2="612" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="120" y1="690" x2="1797" y2="690" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="120" y1="768" x2="1797" y2="768" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="120" y1="846" x2="1797" y2="846" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="120" y1="306" x2="1797" y2="306" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="420" y1="250" x2="420" y2="846" stroke="#c3ccec" stroke-width="3" stroke-linecap="butt"/>
+<line x1="573" y1="306" x2="573" y2="846" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="726" y1="306" x2="726" y2="846" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="879" y1="306" x2="879" y2="846" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="1032" y1="306" x2="1032" y2="846" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="1185" y1="250" x2="1185" y2="846" stroke="#c3ccec" stroke-width="3" stroke-linecap="butt"/>
+<line x1="1338" y1="306" x2="1338" y2="846" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="1491" y1="306" x2="1491" y2="846" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="1644" y1="306" x2="1644" y2="846" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="1797" y1="306" x2="1797" y2="846" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+</g>
+</g>
+<text x="120" y="898" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#3b4772" text-anchor="start">●  ARP 6 combines the Raspberry Pi 5 controller with the Virtuose Elite 0.3 audio board</text>
+<g id="Next_step">
+<circle cx="960" cy="966" r="40" fill="#c3ccec"/>
+<circle cx="960" cy="960" r="40" fill="url(#cOrg)"/>
+<path d="M945,953 L960,970 L975,953" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="960" y="1032" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#3b4772" text-anchor="middle" letter-spacing="1.5">DEPLOYMENT</text>
+</g>
+</svg>

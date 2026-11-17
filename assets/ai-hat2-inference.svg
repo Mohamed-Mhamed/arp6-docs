@@ -1,0 +1,305 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>ARP 6 - AI HAT+2 inference</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#f0f3fe"/><stop offset="1" stop-color="#e3e8fa"/>
+  </linearGradient>
+  <linearGradient id="cBlue" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#5a8bf5"/><stop offset="1" stop-color="#2f5bd3"/>
+  </linearGradient>
+  <linearGradient id="cOrg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fba24a"/><stop offset="1" stop-color="#e3691c"/>
+  </linearGradient>
+  <linearGradient id="cNavy" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3b4a8a"/><stop offset="1" stop-color="#1c2655"/>
+  </linearGradient>
+  <linearGradient id="cGreen" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#46b68a"/><stop offset="1" stop-color="#23785a"/>
+  </linearGradient>
+  <linearGradient id="cPurple" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#9b86e8"/><stop offset="1" stop-color="#5a3fc0"/>
+  </linearGradient>
+  <linearGradient id="waveFade" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#7fd0f2"/><stop offset="1" stop-color="#6b4fd0"/>
+  </linearGradient>
+<marker id="m-3f73e8" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="3.4" markerHeight="3.4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3f73e8"/></marker><marker id="m-1b2250" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="3.4" markerHeight="3.4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1b2250"/></marker></defs>
+<g id="Background">
+<rect x="0" y="0" width="1920" height="1080" rx="0" fill="url(#bg)"/>
+<g id="Background_Iso_Grid" stroke="#d9e0f5" stroke-width="2" fill="none">
+<line x1="0" y1="-2221" x2="1920" y2="-3162"/>
+<line x1="0" y1="-2221" x2="1920" y2="-1280"/>
+<line x1="0" y1="-2121" x2="1920" y2="-3062"/>
+<line x1="0" y1="-2121" x2="1920" y2="-1180"/>
+<line x1="0" y1="-2021" x2="1920" y2="-2962"/>
+<line x1="0" y1="-2021" x2="1920" y2="-1080"/>
+<line x1="0" y1="-1921" x2="1920" y2="-2862"/>
+<line x1="0" y1="-1921" x2="1920" y2="-980"/>
+<line x1="0" y1="-1821" x2="1920" y2="-2762"/>
+<line x1="0" y1="-1821" x2="1920" y2="-880"/>
+<line x1="0" y1="-1721" x2="1920" y2="-2662"/>
+<line x1="0" y1="-1721" x2="1920" y2="-780"/>
+<line x1="0" y1="-1621" x2="1920" y2="-2562"/>
+<line x1="0" y1="-1621" x2="1920" y2="-680"/>
+<line x1="0" y1="-1521" x2="1920" y2="-2462"/>
+<line x1="0" y1="-1521" x2="1920" y2="-580"/>
+<line x1="0" y1="-1421" x2="1920" y2="-2362"/>
+<line x1="0" y1="-1421" x2="1920" y2="-480"/>
+<line x1="0" y1="-1321" x2="1920" y2="-2262"/>
+<line x1="0" y1="-1321" x2="1920" y2="-380"/>
+<line x1="0" y1="-1221" x2="1920" y2="-2162"/>
+<line x1="0" y1="-1221" x2="1920" y2="-280"/>
+<line x1="0" y1="-1121" x2="1920" y2="-2062"/>
+<line x1="0" y1="-1121" x2="1920" y2="-180"/>
+<line x1="0" y1="-1021" x2="1920" y2="-1962"/>
+<line x1="0" y1="-1021" x2="1920" y2="-80"/>
+<line x1="0" y1="-921" x2="1920" y2="-1862"/>
+<line x1="0" y1="-921" x2="1920" y2="20"/>
+<line x1="0" y1="-821" x2="1920" y2="-1762"/>
+<line x1="0" y1="-821" x2="1920" y2="120"/>
+<line x1="0" y1="-721" x2="1920" y2="-1662"/>
+<line x1="0" y1="-721" x2="1920" y2="220"/>
+<line x1="0" y1="-621" x2="1920" y2="-1562"/>
+<line x1="0" y1="-621" x2="1920" y2="320"/>
+<line x1="0" y1="-521" x2="1920" y2="-1462"/>
+<line x1="0" y1="-521" x2="1920" y2="420"/>
+<line x1="0" y1="-421" x2="1920" y2="-1362"/>
+<line x1="0" y1="-421" x2="1920" y2="520"/>
+<line x1="0" y1="-321" x2="1920" y2="-1262"/>
+<line x1="0" y1="-321" x2="1920" y2="620"/>
+<line x1="0" y1="-221" x2="1920" y2="-1162"/>
+<line x1="0" y1="-221" x2="1920" y2="720"/>
+<line x1="0" y1="-121" x2="1920" y2="-1062"/>
+<line x1="0" y1="-121" x2="1920" y2="820"/>
+<line x1="0" y1="-21" x2="1920" y2="-962"/>
+<line x1="0" y1="-21" x2="1920" y2="920"/>
+<line x1="0" y1="79" x2="1920" y2="-862"/>
+<line x1="0" y1="79" x2="1920" y2="1020"/>
+<line x1="0" y1="179" x2="1920" y2="-762"/>
+<line x1="0" y1="179" x2="1920" y2="1120"/>
+<line x1="0" y1="279" x2="1920" y2="-662"/>
+<line x1="0" y1="279" x2="1920" y2="1220"/>
+<line x1="0" y1="379" x2="1920" y2="-562"/>
+<line x1="0" y1="379" x2="1920" y2="1320"/>
+<line x1="0" y1="479" x2="1920" y2="-462"/>
+<line x1="0" y1="479" x2="1920" y2="1420"/>
+<line x1="0" y1="579" x2="1920" y2="-362"/>
+<line x1="0" y1="579" x2="1920" y2="1520"/>
+<line x1="0" y1="679" x2="1920" y2="-262"/>
+<line x1="0" y1="679" x2="1920" y2="1620"/>
+<line x1="0" y1="779" x2="1920" y2="-162"/>
+<line x1="0" y1="779" x2="1920" y2="1720"/>
+<line x1="0" y1="879" x2="1920" y2="-62"/>
+<line x1="0" y1="879" x2="1920" y2="1820"/>
+<line x1="0" y1="979" x2="1920" y2="38"/>
+<line x1="0" y1="979" x2="1920" y2="1920"/>
+<line x1="0" y1="1079" x2="1920" y2="138"/>
+<line x1="0" y1="1079" x2="1920" y2="2020"/>
+<line x1="0" y1="1179" x2="1920" y2="238"/>
+<line x1="0" y1="1179" x2="1920" y2="2120"/>
+<line x1="0" y1="1279" x2="1920" y2="338"/>
+<line x1="0" y1="1279" x2="1920" y2="2220"/>
+<line x1="0" y1="1379" x2="1920" y2="438"/>
+<line x1="0" y1="1379" x2="1920" y2="2320"/>
+<line x1="0" y1="1479" x2="1920" y2="538"/>
+<line x1="0" y1="1479" x2="1920" y2="2420"/>
+<line x1="0" y1="1579" x2="1920" y2="638"/>
+<line x1="0" y1="1579" x2="1920" y2="2520"/>
+<line x1="0" y1="1679" x2="1920" y2="738"/>
+<line x1="0" y1="1679" x2="1920" y2="2620"/>
+<line x1="0" y1="1779" x2="1920" y2="838"/>
+<line x1="0" y1="1779" x2="1920" y2="2720"/>
+<line x1="0" y1="1879" x2="1920" y2="938"/>
+<line x1="0" y1="1879" x2="1920" y2="2820"/>
+<line x1="0" y1="1979" x2="1920" y2="1038"/>
+<line x1="0" y1="1979" x2="1920" y2="2920"/>
+<line x1="0" y1="2079" x2="1920" y2="1138"/>
+<line x1="0" y1="2079" x2="1920" y2="3020"/>
+<line x1="0" y1="2179" x2="1920" y2="1238"/>
+<line x1="0" y1="2179" x2="1920" y2="3120"/>
+</g>
+</g>
+<g id="Title">
+<rect x="100" y="62" width="9" height="58" rx="4" fill="#e8742a"/>
+<text x="130" y="104" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" fill="#1c2655" text-anchor="start">AI HAT+2</text>
+<text x="130" y="142" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#6b7aa8" text-anchor="start">What the accelerator does · models resident in its own memory, and how they get there</text>
+</g>
+<g id="Legend">
+<rect x="1150" y="64" width="670" height="62" rx="16" fill="#ffffff" stroke="#c3ccec" stroke-width="2"/>
+<line x1="1176" y1="95" x2="1216" y2="95" stroke="#3f73e8" stroke-width="7" stroke-linecap="round"/>
+<text x="1226" y="101" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1c2655" text-anchor="start">Inference · per block of audio</text>
+<line x1="1448" y1="95" x2="1488" y2="95" stroke="#1b2250" stroke-width="7" stroke-linecap="round"/>
+<text x="1498" y="101" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1c2655" text-anchor="start">Deployment · done once</text>
+<rect x="1718" y="80" width="84" height="30" rx="15" fill="#e8742a"/>
+<text x="1760" y="101" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Signal</text>
+</g>
+<g id="Frame">
+<rect x="440" y="272" width="1100" height="736" rx="30" fill="#c3ccec"/>
+<rect x="440" y="262" width="1100" height="736" rx="30" fill="#ffffff" stroke="#1c2655" stroke-width="3"/>
+<rect x="1296" y="240" width="244" height="44" rx="22" fill="#1b2250"/>
+<text x="1418" y="270" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.8">NPU · model runtime</text>
+</g>
+<g id="Lane_1">
+<rect x="440" y="300" width="1100" height="330" rx="16" fill="#eef3ff"/>
+<rect x="460" y="316" width="259.6" height="32" rx="16" fill="#3f73e8"/>
+<text x="589.8" y="338" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1.1">INFERENCE · PI TO RESULT</text>
+<text x="737.6" y="338" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#6b7aa8" text-anchor="start">the path every block of features takes, in milliseconds</text>
+<rect x="460" y="376" width="250" height="230" rx="14" fill="none" stroke="#3f73e8" stroke-width="2.5" stroke-dasharray="8 7"/>
+<circle cx="490" cy="404" r="15" fill="#3f73e8"/>
+<text x="490" y="409" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="514" y="410" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#3b4772" text-anchor="start" letter-spacing="0.8">TRANSPORT</text>
+<rect x="479" y="434.5" width="212" height="56" rx="11" fill="#c3ccec"/>
+<rect x="479" y="430.5" width="212" height="56" rx="11" fill="url(#cBlue)"/>
+<text x="585" y="456.5" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">PCIe link</text>
+<text x="585" y="477.5" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">from the Pi</text>
+<rect x="479" y="493" width="212" height="56" rx="11" fill="#c3ccec"/>
+<rect x="479" y="489" width="212" height="56" rx="11" fill="url(#cBlue)"/>
+<text x="585" y="515" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">DMA buffer</text>
+<text x="585" y="536" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">zero copy</text>
+<rect x="479" y="551.5" width="212" height="56" rx="11" fill="#c3ccec"/>
+<rect x="479" y="547.5" width="212" height="56" rx="11" fill="url(#cBlue)"/>
+<text x="585" y="573.5" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">scheduler</text>
+<text x="585" y="594.5" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">queues the job</text>
+<path d="M711,491 L729,491" fill="none" stroke="#3f73e8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-3f73e8)"/>
+<rect x="730" y="376" width="250" height="230" rx="14" fill="none" stroke="#3f73e8" stroke-width="2.5" stroke-dasharray="8 7"/>
+<circle cx="760" cy="404" r="15" fill="#3f73e8"/>
+<text x="760" y="409" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<text x="784" y="410" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#3b4772" text-anchor="start" letter-spacing="0.8">PREPARE</text>
+<rect x="749" y="434.5" width="212" height="56" rx="11" fill="#c3ccec"/>
+<rect x="749" y="430.5" width="212" height="56" rx="11" fill="url(#cBlue)"/>
+<text x="855" y="456.5" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">tensor shaping</text>
+<text x="855" y="477.5" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">frames → input</text>
+<rect x="749" y="493" width="212" height="56" rx="11" fill="#c3ccec"/>
+<rect x="749" y="489" width="212" height="56" rx="11" fill="url(#cBlue)"/>
+<text x="855" y="515" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">normalise</text>
+<text x="855" y="536" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">scaling</text>
+<rect x="749" y="551.5" width="212" height="56" rx="11" fill="#c3ccec"/>
+<rect x="749" y="547.5" width="212" height="56" rx="11" fill="url(#cBlue)"/>
+<text x="855" y="573.5" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">quantise</text>
+<text x="855" y="594.5" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">int8</text>
+<path d="M981,491 L999,491" fill="none" stroke="#3f73e8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-3f73e8)"/>
+<rect x="1000" y="376" width="250" height="230" rx="14" fill="none" stroke="#3f73e8" stroke-width="2.5" stroke-dasharray="8 7"/>
+<circle cx="1030" cy="404" r="15" fill="#3f73e8"/>
+<text x="1030" y="409" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<text x="1054" y="410" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#3b4772" text-anchor="start" letter-spacing="0.8">MODELS IN RAM</text>
+<rect x="1019" y="434.5" width="212" height="56" rx="11" fill="#c3ccec"/>
+<rect x="1019" y="430.5" width="212" height="56" rx="11" fill="url(#cBlue)"/>
+<text x="1125" y="456.5" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">peak-correction</text>
+<text x="1125" y="477.5" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">recovers lost beats</text>
+<rect x="1019" y="493" width="212" height="56" rx="11" fill="#c3ccec"/>
+<rect x="1019" y="489" width="212" height="56" rx="11" fill="url(#cBlue)"/>
+<text x="1125" y="515" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">stress model</text>
+<text x="1125" y="536" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">HRV → stress</text>
+<rect x="1019" y="551.5" width="212" height="56" rx="11" fill="#c3ccec"/>
+<rect x="1019" y="547.5" width="212" height="56" rx="11" fill="url(#cBlue)"/>
+<text x="1125" y="573.5" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">sound classifier</text>
+<text x="1125" y="594.5" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">trigger sounds</text>
+<path d="M1251,491 L1269,491" fill="none" stroke="#3f73e8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-3f73e8)"/>
+<rect x="1270" y="376" width="250" height="230" rx="14" fill="none" stroke="#3f73e8" stroke-width="2.5" stroke-dasharray="8 7"/>
+<circle cx="1300" cy="404" r="15" fill="#3f73e8"/>
+<text x="1300" y="409" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<text x="1324" y="410" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#3b4772" text-anchor="start" letter-spacing="0.8">RESULT</text>
+<rect x="1289" y="434.5" width="212" height="56" rx="11" fill="#c3ccec"/>
+<rect x="1289" y="430.5" width="212" height="56" rx="11" fill="url(#cBlue)"/>
+<text x="1395" y="456.5" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">dequantise</text>
+<text x="1395" y="477.5" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">back to values</text>
+<rect x="1289" y="493" width="212" height="56" rx="11" fill="#c3ccec"/>
+<rect x="1289" y="489" width="212" height="56" rx="11" fill="url(#cBlue)"/>
+<text x="1395" y="515" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">labels · scores</text>
+<text x="1395" y="536" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">what was found</text>
+<rect x="1289" y="551.5" width="212" height="56" rx="11" fill="#c3ccec"/>
+<rect x="1289" y="547.5" width="212" height="56" rx="11" fill="url(#cBlue)"/>
+<text x="1395" y="573.5" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">PCIe return</text>
+<text x="1395" y="594.5" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">to the Pi</text>
+</g>
+<g id="Lane_2">
+<rect x="440" y="660" width="1100" height="318" rx="16" fill="#f1f3fb"/>
+<rect x="460" y="676" width="353.6" height="32" rx="16" fill="#1b2250"/>
+<text x="636.8" y="698" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1.1">DEPLOYMENT · HOW A MODEL GETS HERE</text>
+<text x="831.6" y="698" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#6b7aa8" text-anchor="start">done once on a workstation, not on the platform</text>
+<rect x="460" y="736" width="250" height="218" rx="14" fill="none" stroke="#1b2250" stroke-width="2.5" stroke-dasharray="8 7"/>
+<circle cx="490" cy="764" r="15" fill="#1b2250"/>
+<text x="490" y="769" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="514" y="770" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#3b4772" text-anchor="start" letter-spacing="0.8">TRAIN</text>
+<rect x="479" y="804.667" width="212" height="64" rx="11" fill="#c3ccec"/>
+<rect x="479" y="800.667" width="212" height="64" rx="11" fill="#1b2250"/>
+<text x="585" y="830.667" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">recorded data</text>
+<text x="585" y="851.667" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">.wav · .csv</text>
+<rect x="479" y="881.333" width="212" height="64" rx="11" fill="#c3ccec"/>
+<rect x="479" y="877.333" width="212" height="64" rx="11" fill="#1b2250"/>
+<text x="585" y="907.333" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">training</text>
+<text x="585" y="928.333" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">.py · off device</text>
+<path d="M711,845 L729,845" fill="none" stroke="#1b2250" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-1b2250)"/>
+<rect x="730" y="736" width="250" height="218" rx="14" fill="none" stroke="#1b2250" stroke-width="2.5" stroke-dasharray="8 7"/>
+<circle cx="760" cy="764" r="15" fill="#1b2250"/>
+<text x="760" y="769" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<text x="784" y="770" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#3b4772" text-anchor="start" letter-spacing="0.8">EXPORT</text>
+<rect x="749" y="804.667" width="212" height="64" rx="11" fill="#c3ccec"/>
+<rect x="749" y="800.667" width="212" height="64" rx="11" fill="#1b2250"/>
+<text x="855" y="830.667" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">model</text>
+<text x="855" y="851.667" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">.onnx</text>
+<rect x="749" y="881.333" width="212" height="64" rx="11" fill="#c3ccec"/>
+<rect x="749" y="877.333" width="212" height="64" rx="11" fill="#1b2250"/>
+<text x="855" y="907.333" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">calibration set</text>
+<text x="855" y="928.333" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">for quantisation</text>
+<path d="M981,845 L999,845" fill="none" stroke="#1b2250" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-1b2250)"/>
+<rect x="1000" y="736" width="250" height="218" rx="14" fill="none" stroke="#1b2250" stroke-width="2.5" stroke-dasharray="8 7"/>
+<circle cx="1030" cy="764" r="15" fill="#1b2250"/>
+<text x="1030" y="769" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<text x="1054" y="770" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#3b4772" text-anchor="start" letter-spacing="0.8">COMPILE</text>
+<rect x="1019" y="804.667" width="212" height="64" rx="11" fill="#c3ccec"/>
+<rect x="1019" y="800.667" width="212" height="64" rx="11" fill="#1b2250"/>
+<text x="1125" y="830.667" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">compiler</text>
+<text x="1125" y="851.667" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">for this NPU</text>
+<rect x="1019" y="881.333" width="212" height="64" rx="11" fill="#c3ccec"/>
+<rect x="1019" y="877.333" width="212" height="64" rx="11" fill="#1b2250"/>
+<text x="1125" y="907.333" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">compiled model</text>
+<text x="1125" y="928.333" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">.hef</text>
+<path d="M1251,845 L1269,845" fill="none" stroke="#1b2250" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-1b2250)"/>
+<rect x="1270" y="736" width="250" height="218" rx="14" fill="none" stroke="#1b2250" stroke-width="2.5" stroke-dasharray="8 7"/>
+<circle cx="1300" cy="764" r="15" fill="#1b2250"/>
+<text x="1300" y="769" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<text x="1324" y="770" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#3b4772" text-anchor="start" letter-spacing="0.8">LOAD</text>
+<rect x="1289" y="804.667" width="212" height="64" rx="11" fill="#c3ccec"/>
+<rect x="1289" y="800.667" width="212" height="64" rx="11" fill="#1b2250"/>
+<text x="1395" y="830.667" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">runtime loads</text>
+<text x="1395" y="851.667" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">at startup</text>
+<rect x="1289" y="881.333" width="212" height="64" rx="11" fill="#c3ccec"/>
+<rect x="1289" y="877.333" width="212" height="64" rx="11" fill="#1b2250"/>
+<text x="1395" y="907.333" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">stays resident</text>
+<text x="1395" y="928.333" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.85">in HAT memory</text>
+</g>
+<g id="Endpoints">
+<rect x="100" y="336" width="236" height="150" rx="16" fill="#c3ccec"/>
+<rect x="100" y="330" width="236" height="150" rx="16" fill="#ffffff" stroke="#c3ccec" stroke-width="2"/>
+<text x="218" y="374" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1c2655" text-anchor="middle">Raspberry Pi 5</text>
+<text x="218" y="398" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7aa8" text-anchor="middle">sends features</text>
+<text x="218" y="430" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#3b4772" text-anchor="middle">illustration 11</text>
+<rect x="100" y="706" width="236" height="150" rx="16" fill="#c3ccec"/>
+<rect x="100" y="700" width="236" height="150" rx="16" fill="#ffffff" stroke="#c3ccec" stroke-width="2"/>
+<text x="218" y="744" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1c2655" text-anchor="middle">Workstation</text>
+<text x="218" y="768" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7aa8" text-anchor="middle">not the platform</text>
+<text x="218" y="800" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#3b4772" text-anchor="middle">trains and compiles</text>
+<rect x="1640" y="336" width="220" height="150" rx="16" fill="#c3ccec"/>
+<rect x="1640" y="330" width="220" height="150" rx="16" fill="#ffffff" stroke="#c3ccec" stroke-width="2"/>
+<text x="1750" y="374" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1c2655" text-anchor="middle">Raspberry Pi 5</text>
+<text x="1750" y="398" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7aa8" text-anchor="middle">receives results</text>
+<text x="1750" y="430" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#3b4772" text-anchor="middle">peaks · stress</text>
+<text x="1750" y="452" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#3b4772" text-anchor="middle">sound labels</text>
+</g>
+<g id="Signals">
+<rect x="370" y="387" width="88.2" height="34" rx="17" fill="#e8742a"/>
+<text x="414.1" y="410" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.4">PCIE_TX</text>
+<rect x="1585" y="387" width="88.2" height="34" rx="17" fill="#e8742a"/>
+<text x="1629.1" y="410" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.4">PCIE_RX</text>
+<rect x="370" y="773" width="114" height="34" rx="17" fill="#e8742a"/>
+<text x="427" y="796" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.4">model file</text>
+<path d="M302,440 L434,440" fill="none" stroke="#3f73e8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-3f73e8)"/>
+<path d="M302,826 L434,826" fill="none" stroke="#3f73e8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-3f73e8)"/>
+<path d="M1544,440 L1626,440" fill="none" stroke="#1b2250" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-1b2250)"/>
+</g>
+<g id="Notes">
+<rect x="100" y="1012" width="1720" height="50" rx="14" fill="#ffffff" stroke="#c3ccec" stroke-width="2"/>
+<text x="124" y="1043" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#e8742a" text-anchor="start" letter-spacing="1.4">WHY THE HAT</text>
+<text x="250" y="1043" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#3b4772" text-anchor="start">models stay loaded in the accelerator's own memory, so the Pi's CPU is left free for the Python libraries that cannot be accelerated — tempbeat, neurokit2 and the file handling.</text>
+</g>
+</svg>

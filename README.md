@@ -1,12 +1,41 @@
 # ARP 6 — interactive documentation
 
-A static site that presents an ARP 6 illustration and lets the reader click a
-block to open that block's detail drawing, with the block animating open into
-the detail rather than the page jumping. Any number of drawings can be chained,
-to any depth.
+A static site that presents the ARP 6 illustrations as one navigable set: click
+a block and it animates open into the drawing that explains it, instead of the
+page jumping. Twelve illustrations, nested as deep as four levels.
 
 The whole site stays on **one URL**, which is what makes it safe to link from a
 Group-Office wiki page: the link never changes, wherever the reader navigates to.
+
+---
+
+## The chain
+
+```
+1  Hardware evolution            click the ARP 6.0 card
+2  Introducing ARP 6             orange arrow
+3  Related components            any component card magnifies in place
+                                 orange arrow
+4  Platform combinations         orange arrow
+5  Platform deployment           orange arrow
+6  How CRITIAS built on VE       5 sections, zoom and scroll
+                                 click the ARP 6 hardware block
+7  System architecture           five ways down:
+                                   · either ADAU 1787  -> 9
+                                   · Raspberry Pi 5    -> 10
+                                   · AI HAT+2          -> 11
+                                   · the platform area -> 8
+                                   · orange arrow      -> 12
+8  Signal and algorithm flow     codec column -> 9
+9  ADAU 1787 L · SigmaStudio
+10 Raspberry Pi 5 processing
+11 AI HAT+2 inference
+12 Vision project
+```
+
+Every drawing below the top level has a **Back to …** control at bottom left,
+and `Esc` and the browser's back button both work. The breadcrumb across the top
+jumps to any level.
 
 ---
 
@@ -14,179 +43,135 @@ Group-Office wiki page: the link never changes, wherever the reader navigates to
 
 | Path | What it is | Edit it? |
 | --- | --- | --- |
-| `data.js` | **The content map.** Which drawings exist, and which block leads where. | **Yes — this is the file you edit.** |
-| `assets/*.svg` | The drawings, used unmodified. | Add new ones here. |
+| `data.js` | **The content map.** Which drawings exist and what leads where. | **Yes — this is the file you edit.** |
+| `assets/*.svg` | The twelve illustrations, used unmodified. | Replace to update a drawing. |
 | `index.html` | Page shell and styling. | Only for look and feel. |
-| `app.js` | Navigation and transition engine. | Rarely. |
-| `tools/svg_groups.py` | Reads hotspot coordinates out of an SVG. | No. |
+| `app.js` | Navigation, transitions, zoom and sections. | Rarely. |
+| `tools/svg_groups.py` | Reads boxes out of a drawing's **named groups**. | No. |
+| `tools/find_shapes.py` | Finds boxes by **fill colour** — for drawings converted from `.ai`, whose group names were lost. | No. |
 | `tools/validate.py` | Checks `data.js` against the files on disk. | No. |
 
 No build step, no dependencies, no server-side code. The Python tools are
-authoring aids only — the published site is just HTML, CSS, JS and SVG.
+authoring aids; the published site is HTML, CSS, JS and SVG.
 
 ---
 
-## Adding a transition
+## Editing the map
 
-Say you want the `ADAU1787_R` block in the architecture drawing to open a new
-drawing `adau1787-right-codec.svg`.
-
-**1. Put the drawing in `assets/`.**
-
-```
-cp ~/wherever/adau1787-right-codec.svg assets/
-```
-
-**2. Read out the coordinates** of the block to click, and of the panel in the
-new drawing that it should open into:
-
-```
-python tools/svg_groups.py --min-size 60 assets/arp6-system-architecture-flat.svg
-python tools/svg_groups.py --min-size 60 assets/adau1787-right-codec.svg
-```
-
-Each line is a named group with its box — `x`, `y`, `w`, `h` in that drawing's
-own coordinates. This is why the SVGs should keep their group names (`ADAU1787_L`,
-`Codec_frame`, `arp-3-0-card` and so on); without them there is nothing to
-measure against.
-
-**3. Add a node** for the new drawing in `data.js`, with `frame` set to the panel
-it should grow from:
+A node is one illustration:
 
 ```js
-"adau1787-right": {
-  title: "ADAU1787 (R) — codec signal flow",
-  svg: "assets/adau1787-right-codec.svg",
-  viewBox: [1920, 1080],              // must match the file's own viewBox
-  frame: { x: 430, y: 260, w: 1150, h: 730 },
-  hotspots: []                        // it can lead onward in turn
+architecture: {
+  title: "System architecture",
+  svg: "assets/arp6-system-architecture.svg",
+  viewBox: [1439.6, 810.003],        // must match the file's own viewBox
+  frame: { x: 401.6, y: 171.9, w: 887.3, h: 527.2 },
+  hotspots: [ … ]
 }
 ```
 
-**4. Add a hotspot** to the drawing it is reached from:
+- **`frame`** is the rectangle the parent's hotspot grows into. Omit it and the
+  whole drawing is used, which reads as a zoom rather than a panel opening.
+- **`hotspots`** are rectangles in that drawing's own coordinates:
+  - `target: "<node>"` opens another illustration
+  - `action: "zoom"` magnifies the rectangle in place — used for the component
+    cards, which have no illustration of their own yet. When one gets a drawing,
+    swap `action` for `target` and nothing else changes.
+  - `style: "button"` draws a visible orange circled arrow, for a control the
+    illustration itself does not show. Used on the architecture → vision link.
+- **`sections`** turns a tall drawing into something read one region at a time.
+  The reader gets a zoom control, and can scroll or use the arrow keys. CRITIAS/VE
+  uses this for its five layers.
 
-```js
-{
-  target: "adau1787-right",
-  label: "ADAU1787 (R) — view signal flow",
-  group: "ADAU1787_R",                // reference only, not used at runtime
-  x: 650, y: 650, w: 340, h: 196
-}
+**Nesting is deliberate on the architecture node.** The platform boundary is
+listed *first* so the blocks inside it sit on top: clicking a block opens that
+block, clicking the space around them opens the signal flow. Order matters — the
+later hotspot wins the click.
+
+### Getting coordinates
+
+Never measure by hand:
+
+```
+python tools/svg_groups.py  --min-size 60 assets/arp6-signal-flow.svg   # named groups
+python tools/find_shapes.py assets/arp6-system-architecture.svg --min-area 20000
+python tools/find_shapes.py assets/critias-VE.svg --fill "#f08a2f"
 ```
 
-**5. Check it:**
+`find_shapes.py` exists because four of the drawings came from Illustrator with
+their text outlined, which also stripped the group names — so a hotspot in those
+is found by looking for the coloured rectangle you want to click.
+
+Then check the result:
 
 ```
 python tools/validate.py
 ```
 
-It fails loudly on a missing file, a `viewBox` that disagrees with the SVG, a
-hotspot pointing at a node that does not exist, or a rectangle outside its
-drawing — the four mistakes that are otherwise hard to spot. Warnings cover
-hotspots that overlap, are too small to click, or drawings nothing links to.
-
-**6. Look at it** (see *Local preview* below), then commit.
-
-### Notes on the content map
-
-- Nesting is unlimited: a detail drawing can have hotspots of its own, and the
-  breadcrumb follows automatically.
-- Drawings need not share a shape. Portrait and oversized drawings work, as long
-  as each node's `viewBox` matches its file — the page fits each drawing on its
-  own terms and animates correctly between differently shaped ones.
-- Omitting `frame` makes the transition zoom the whole drawing instead of opening
-  one panel. That is the right choice when the target has no obvious main panel.
-- Every node is reachable at `…/#node-key`, so a single device page can be linked
-  directly from a wiki page when that is more useful than the overview.
+It fails on a missing drawing, a `viewBox` that disagrees with the SVG, a
+dangling target, a hotspot with neither target nor action, or a rectangle outside
+its drawing. Warnings cover overlaps that are not deliberate nesting, hotspots too
+small to hit, and drawings nothing links to.
 
 ---
 
 ## How the transition works
 
 Each drawing is fitted into the stage and measured in pixels. On a click, the
-target drawing is placed so its `frame` lands exactly on the hotspot that was
-clicked — scaled by `hotspot width / frame width` and offset so the two centres
-coincide — then animated to its natural size, while the drawing being left
-behind pushes in toward that same hotspot and dissolves. Going back runs the
-same animation in reverse.
+target is placed so its `frame` lands exactly on the hotspot that was clicked —
+scaled by `hotspot width / frame width`, offset so the centres coincide — then
+animated to its natural size, while the drawing being left behind pushes in
+toward that same hotspot and dissolves. Going back runs it in reverse.
 
-Two deliberate choices, both about robustness rather than elegance:
+Two deliberate choices, both about robustness:
 
 - **Same-document animation** (Web Animations API), not cross-document view
-  transitions. Cross-document transitions would be less code, but Firefox does
-  not support them yet, and they would put each drawing on its own URL — so the
-  wiki link would only ever land on the overview. This way the behaviour is
-  identical in every current browser.
-- **Routing by `location.hash`**, not `history.pushState`. `pushState` is
-  rejected on `file://` origins, and this page is also meant to work opened
-  straight from a disk or a network share, not only over HTTP.
+  transitions. Those would be less code, but Firefox does not support them yet,
+  and they would put each drawing on its own URL — so the wiki link would only
+  ever land on the first page.
+- **Routing by `location.hash`**, not `history.pushState`, which is rejected on
+  `file://` origins. The page works opened straight from a disk or a share.
 
 Layout is recomputed on resize, so the page is correct at any window size and on
-a projector.
+a projector. The drawings do not share a coordinate space — 1920×1080,
+1438×779, portrait 1080×1920 — which is why geometry is resolved at runtime
+rather than baked in.
 
-Accessibility: hotspots are real buttons, reachable by <kbd>Tab</kbd> and
-activated by <kbd>Enter</kbd>; `Esc` and the browser's back button both go up a
-level; `prefers-reduced-motion` switches views without animation.
+Accessibility: hotspots are real buttons, reachable by <kbd>Tab</kbd>; `Esc` and
+the browser's back button go up a level; `prefers-reduced-motion` switches views
+without animation.
 
 ---
 
 ## Local preview
 
-Open `index.html` directly in a browser, or serve the folder:
-
 ```
-python -m http.server 8787
+python -m http.server 8799
 ```
 
-then visit <http://127.0.0.1:8787/>.
+then <http://127.0.0.1:8799/>. Opening `index.html` directly works too.
+
+Every node is reachable at `…/#node-key` — `#architecture`, `#codec`, `#vision`
+and so on — so a single illustration can be linked from a wiki page directly.
 
 ---
 
 ## Publishing
 
-The site is static, so anything that serves files will do. Two routes:
+Static, so anything that serves files will do.
 
-### GitHub Pages (public URL)
+### GitHub Pages
 
-From the repository root, once it is on the lab's GitHub account:
+**Settings → Pages → Source:** *Deploy from a branch* → **`main` / `/ (root)`**.
+Live about a minute later, rebuilt on every push, no workflow file needed.
 
-1. **Settings → Pages**
-2. **Source:** *Deploy from a branch*
-3. **Branch:** `main`, folder `/ (root)`, then **Save**
+Two things to know: on the free plan the repository must be **public** for Pages
+to serve, and the URL contains the account and repository names — so renaming
+either breaks every link already pasted into the wiki. If the link will spread,
+point a domain at it instead.
 
-The URL is `https://<account>.github.io/<repo>/`, live about a minute later, and
-rebuilt automatically on every push. It needs no workflow file and no
-configuration beyond those three settings.
+### Internally
 
-Two things to know before choosing this:
-
-- On the free plan the repository must be **public** for Pages to serve, so the
-  drawings become publicly viewable and search-indexable. A private repository
-  needs GitHub Team or Enterprise.
-- The URL contains the account and repository names, so **renaming either one
-  breaks every link already pasted into the wiki**. If the link is going to
-  spread, point a domain at the site instead (`docs.<lab-domain>`, one DNS record
-  and one setting), and the link survives any later move.
-
-### Internally (no public exposure)
-
-Copy the folder onto the web root of a server the lab already runs — including
-the Group-Office server itself — and link to it on the LAN. No domain, no
-GitHub, nothing exposed outside. The site is self-contained and needs no PHP,
-database or configuration.
-
-### What Pages cannot do
-
-Static hosting serves files only: no PHP, no database, no server-side code.
-Client-side JavaScript is unrestricted, so transitions, interactive diagrams,
-search and filtering are all fine. The limit only bites for things like user
-accounts or form submissions.
-
----
-
-## Repository history
-
-This folder began as a test of whether the transition was feasible at all,
-published briefly from a personal GitHub account. That page has been taken down.
-The intended home is the lab's GitHub account; nothing in the code or the content
-map depends on which account hosts it.
+Copy the folder onto the web root of a server the lab already runs, including the
+Group-Office server itself, and link to it on the LAN. No domain, nothing exposed
+outside, no PHP or database needed.

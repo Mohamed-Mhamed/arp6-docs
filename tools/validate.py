@@ -149,6 +149,13 @@ def rect_of(h):
             float(h.get("w", 0)), float(h.get("h", 0)))
 
 
+def contains(outer, inner):
+    ox, oy, ow, oh = outer
+    ix, iy, iw, ih = inner
+    return (ix >= ox - 1 and iy >= oy - 1
+            and ix + iw <= ox + ow + 1 and iy + ih <= oy + oh + 1)
+
+
 def overlaps(a, b):
     ax, ay, aw, ah = a
     bx, by, bw, bh = b
@@ -215,6 +222,18 @@ def main():
                 err("%s: frame %g,%g %gx%g falls outside the %gx%g drawing"
                     % (where, x, y, fw, fh, w, h))
 
+        # ---- sections
+        for i, sec in enumerate(n.get("sections") or []):
+            stag = "%s section %d" % (where, i + 1)
+            sx, sy, sw, sh = rect_of(sec)
+            if sw <= 0 or sh <= 0:
+                err("%s: rectangle has no area" % stag)
+            elif sx < -1 or sy < -1 or sx + sw > w + 1 or sy + sh > h + 1:
+                err("%s: %g,%g %gx%g falls outside the %gx%g drawing"
+                    % (stag, sx, sy, sw, sh, w, h))
+            if not sec.get("title"):
+                warn("%s: no title, the section bar will be blank" % stag)
+
         # ---- hotspots
         spots = n.get("hotspots") or []
         boxes = []
@@ -222,8 +241,13 @@ def main():
             tag = "%s hotspot %d" % (where, i + 1)
             target = hs.get("target")
 
-            if not target:
-                err("%s: no target" % tag)
+            action = hs.get("action")
+            if not target and not action:
+                err("%s: has neither a target nor an action" % tag)
+            elif action and action not in ("zoom",):
+                err("%s: unknown action %r" % (tag, action))
+            elif not target:
+                pass                       # an in-place action, nothing to resolve
             elif target not in nodes:
                 err("%s: target %r does not exist" % (tag, target))
             elif target == key:
@@ -242,9 +266,12 @@ def main():
                 warn("%s: only %gx%g units, which is hard to click" % (tag, hw, hh))
 
             for j, prev in boxes:
-                if overlaps((x, y, hw, hh), prev):
-                    warn("%s overlaps hotspot %d: the upper one wins the click"
-                         % (tag, j + 1))
+                if not overlaps((x, y, hw, hh), prev):
+                    continue
+                if contains(prev, (x, y, hw, hh)):
+                    continue               # nested on purpose: inner wins, as intended
+                warn("%s overlaps hotspot %d without being inside it: "
+                     "the upper one wins the click" % (tag, j + 1))
             boxes.append((i, (x, y, hw, hh)))
 
             if not hs.get("label"):
@@ -255,7 +282,7 @@ def main():
         if key != start and key not in linked:
             warn("node %r: nothing links to it; only a direct #%s link reaches it"
                  % (key, key))
-        if key in linked and not n.get("frame"):
+        if key in linked and not n.get("frame") and key != start:
             warn("node %r: no frame, so the transition zooms the whole drawing "
                  "instead of opening a panel" % key)
 

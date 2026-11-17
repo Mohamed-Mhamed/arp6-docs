@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>ARP 6 - platform deployment</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#f0f3fe"/><stop offset="1" stop-color="#e3e8fa"/>
+  </linearGradient>
+  <linearGradient id="cBlue" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#5a8bf5"/><stop offset="1" stop-color="#2f5bd3"/>
+  </linearGradient>
+  <linearGradient id="cOrg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fba24a"/><stop offset="1" stop-color="#e3691c"/>
+  </linearGradient>
+  <linearGradient id="cNavy" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3b4a8a"/><stop offset="1" stop-color="#1c2655"/>
+  </linearGradient>
+  <linearGradient id="cGreen" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#46b68a"/><stop offset="1" stop-color="#23785a"/>
+  </linearGradient>
+  <linearGradient id="cPurple" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#9b86e8"/><stop offset="1" stop-color="#5a3fc0"/>
+  </linearGradient>
+  <linearGradient id="waveFade" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#7fd0f2"/><stop offset="1" stop-color="#6b4fd0"/>
+  </linearGradient>
+</defs>
+<g id="Background">
+<rect x="0" y="0" width="1920" height="1080" rx="0" fill="url(#bg)"/>
+<g id="Background_Iso_Grid" stroke="#d9e0f5" stroke-width="2" fill="none">
+<line x1="0" y1="-2221" x2="1920" y2="-3162"/>
+<line x1="0" y1="-2221" x2="1920" y2="-1280"/>
+<line x1="0" y1="-2121" x2="1920" y2="-3062"/>
+<line x1="0" y1="-2121" x2="1920" y2="-1180"/>
+<line x1="0" y1="-2021" x2="1920" y2="-2962"/>
+<line x1="0" y1="-2021" x2="1920" y2="-1080"/>
+<line x1="0" y1="-1921" x2="1920" y2="-2862"/>
+<line x1="0" y1="-1921" x2="1920" y2="-980"/>
+<line x1="0" y1="-1821" x2="1920" y2="-2762"/>
+<line x1="0" y1="-1821" x2="1920" y2="-880"/>
+<line x1="0" y1="-1721" x2="1920" y2="-2662"/>
+<line x1="0" y1="-1721" x2="1920" y2="-780"/>
+<line x1="0" y1="-1621" x2="1920" y2="-2562"/>
+<line x1="0" y1="-1621" x2="1920" y2="-680"/>
+<line x1="0" y1="-1521" x2="1920" y2="-2462"/>
+<line x1="0" y1="-1521" x2="1920" y2="-580"/>
+<line x1="0" y1="-1421" x2="1920" y2="-2362"/>
+<line x1="0" y1="-1421" x2="1920" y2="-480"/>
+<line x1="0" y1="-1321" x2="1920" y2="-2262"/>
+<line x1="0" y1="-1321" x2="1920" y2="-380"/>
+<line x1="0" y1="-1221" x2="1920" y2="-2162"/>
+<line x1="0" y1="-1221" x2="1920" y2="-280"/>
+<line x1="0" y1="-1121" x2="1920" y2="-2062"/>
+<line x1="0" y1="-1121" x2="1920" y2="-180"/>
+<line x1="0" y1="-1021" x2="1920" y2="-1962"/>
+<line x1="0" y1="-1021" x2="1920" y2="-80"/>
+<line x1="0" y1="-921" x2="1920" y2="-1862"/>
+<line x1="0" y1="-921" x2="1920" y2="20"/>
+<line x1="0" y1="-821" x2="1920" y2="-1762"/>
+<line x1="0" y1="-821" x2="1920" y2="120"/>
+<line x1="0" y1="-721" x2="1920" y2="-1662"/>
+<line x1="0" y1="-721" x2="1920" y2="220"/>
+<line x1="0" y1="-621" x2="1920" y2="-1562"/>
+<line x1="0" y1="-621" x2="1920" y2="320"/>
+<line x1="0" y1="-521" x2="1920" y2="-1462"/>
+<line x1="0" y1="-521" x2="1920" y2="420"/>
+<line x1="0" y1="-421" x2="1920" y2="-1362"/>
+<line x1="0" y1="-421" x2="1920" y2="520"/>
+<line x1="0" y1="-321" x2="1920" y2="-1262"/>
+<line x1="0" y1="-321" x2="1920" y2="620"/>
+<line x1="0" y1="-221" x2="1920" y2="-1162"/>
+<line x1="0" y1="-221" x2="1920" y2="720"/>
+<line x1="0" y1="-121" x2="1920" y2="-1062"/>
+<line x1="0" y1="-121" x2="1920" y2="820"/>
+<line x1="0" y1="-21" x2="1920" y2="-962"/>
+<line x1="0" y1="-21" x2="1920" y2="920"/>
+<line x1="0" y1="79" x2="1920" y2="-862"/>
+<line x1="0" y1="79" x2="1920" y2="1020"/>
+<line x1="0" y1="179" x2="1920" y2="-762"/>
+<line x1="0" y1="179" x2="1920" y2="1120"/>
+<line x1="0" y1="279" x2="1920" y2="-662"/>
+<line x1="0" y1="279" x2="1920" y2="1220"/>
+<line x1="0" y1="379" x2="1920" y2="-562"/>
+<line x1="0" y1="379" x2="1920" y2="1320"/>
+<line x1="0" y1="479" x2="1920" y2="-462"/>
+<line x1="0" y1="479" x2="1920" y2="1420"/>
+<line x1="0" y1="579" x2="1920" y2="-362"/>
+<line x1="0" y1="579" x2="1920" y2="1520"/>
+<line x1="0" y1="679" x2="1920" y2="-262"/>
+<line x1="0" y1="679" x2="1920" y2="1620"/>
+<line x1="0" y1="779" x2="1920" y2="-162"/>
+<line x1="0" y1="779" x2="1920" y2="1720"/>
+<line x1="0" y1="879" x2="1920" y2="-62"/>
+<line x1="0" y1="879" x2="1920" y2="1820"/>
+<line x1="0" y1="979" x2="1920" y2="38"/>
+<line x1="0" y1="979" x2="1920" y2="1920"/>
+<line x1="0" y1="1079" x2="1920" y2="138"/>
+<line x1="0" y1="1079" x2="1920" y2="2020"/>
+<line x1="0" y1="1179" x2="1920" y2="238"/>
+<line x1="0" y1="1179" x2="1920" y2="2120"/>
+<line x1="0" y1="1279" x2="1920" y2="338"/>
+<line x1="0" y1="1279" x2="1920" y2="2220"/>
+<line x1="0" y1="1379" x2="1920" y2="438"/>
+<line x1="0" y1="1379" x2="1920" y2="2320"/>
+<line x1="0" y1="1479" x2="1920" y2="538"/>
+<line x1="0" y1="1479" x2="1920" y2="2420"/>
+<line x1="0" y1="1579" x2="1920" y2="638"/>
+<line x1="0" y1="1579" x2="1920" y2="2520"/>
+<line x1="0" y1="1679" x2="1920" y2="738"/>
+<line x1="0" y1="1679" x2="1920" y2="2620"/>
+<line x1="0" y1="1779" x2="1920" y2="838"/>
+<line x1="0" y1="1779" x2="1920" y2="2720"/>
+<line x1="0" y1="1879" x2="1920" y2="938"/>
+<line x1="0" y1="1879" x2="1920" y2="2820"/>
+<line x1="0" y1="1979" x2="1920" y2="1038"/>
+<line x1="0" y1="1979" x2="1920" y2="2920"/>
+<line x1="0" y1="2079" x2="1920" y2="1138"/>
+<line x1="0" y1="2079" x2="1920" y2="3020"/>
+<line x1="0" y1="2179" x2="1920" y2="1238"/>
+<line x1="0" y1="2179" x2="1920" y2="3120"/>
+</g>
+</g>
+<g id="Title">
+<rect x="60" y="52" width="9" height="58" rx="4" fill="#e8742a"/>
+<text x="88" y="96" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#1c2655" text-anchor="start">Platform deployment</text>
+<text x="88" y="134" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#6b7aa8" text-anchor="start">Which platform is where — allocations as of 2026-08-15, status as of 2026-10-06</text>
+</g>
+<g id="Deployment_table">
+<rect x="120" y="272" width="1680" height="592" rx="20" fill="#c3ccec"/>
+<rect x="120" y="262" width="1680" height="592" rx="20" fill="#ffffff"/>
+<rect x="120" y="262" width="1680" height="76" rx="0" fill="#f4f7ff"/>
+<text x="144" y="310" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#3b4772" text-anchor="start" letter-spacing="1.8">PLATFORM</text>
+<text x="374" y="310" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#3b4772" text-anchor="start" letter-spacing="1.8">CONTROLLER</text>
+<text x="604" y="310" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#3b4772" text-anchor="start" letter-spacing="1.8">AUDIO</text>
+<text x="754" y="310" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#3b4772" text-anchor="start" letter-spacing="1.8">PROJECT</text>
+<text x="1004" y="310" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#3b4772" text-anchor="start" letter-spacing="1.8">HELD BY</text>
+<text x="1454" y="310" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#3b4772" text-anchor="start" letter-spacing="1.8">STATUS</text>
+<rect x="120" y="338" width="1680" height="86" rx="0" fill="#f7f9ff"/>
+<text x="144" y="388" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#1c2655" text-anchor="start">384 kHz Recorder</text>
+<text x="374" y="388" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1c2655" text-anchor="start">—</text>
+<text x="604" y="388" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1c2655" text-anchor="start">VE 0.0</text>
+<text x="754" y="388" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1c2655" text-anchor="start">Impulse</text>
+<text x="1004" y="388" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#3b4772" text-anchor="start">Jérémie</text>
+<text x="1454" y="388" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#3b4772" text-anchor="start">1 working · 1 under construction</text>
+<text x="144" y="474" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#1c2655" text-anchor="start">ARP 5</text>
+<text x="374" y="474" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1c2655" text-anchor="start">ESP32 WROVER</text>
+<text x="604" y="474" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1c2655" text-anchor="start">VE 0.1</text>
+<text x="754" y="474" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1c2655" text-anchor="start">ProPro</text>
+<text x="1004" y="474" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#3b4772" text-anchor="start">Solenn Ollivier + U. Laval</text>
+<text x="1454" y="474" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#3b4772" text-anchor="start">2 at CRITIAS</text>
+<rect x="120" y="510" width="1680" height="86" rx="0" fill="#f7f9ff"/>
+<text x="144" y="560" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#1c2655" text-anchor="start">ARP 5*</text>
+<text x="374" y="560" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1c2655" text-anchor="start">ESP32 P4</text>
+<text x="604" y="560" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1c2655" text-anchor="start">VE 0.2</text>
+<text x="754" y="560" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1c2655" text-anchor="start">InteracSon</text>
+<text x="1004" y="560" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#3b4772" text-anchor="start">Emma Métivier</text>
+<text x="1454" y="560" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#aebbea" text-anchor="start">—</text>
+<text x="144" y="646" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#1c2655" text-anchor="start">ARP 5+</text>
+<text x="374" y="646" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1c2655" text-anchor="start">ESP32 P4</text>
+<text x="604" y="646" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1c2655" text-anchor="start">VE 0.2</text>
+<text x="754" y="646" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1c2655" text-anchor="start">ProPro + Impulse</text>
+<text x="1004" y="646" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#3b4772" text-anchor="start">Tristan Franc</text>
+<text x="1454" y="646" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#3b4772" text-anchor="start">1 lent to U. Laval</text>
+<rect x="120" y="682" width="1680" height="86" rx="0" fill="#f7f9ff"/>
+<text x="144" y="732" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#1c2655" text-anchor="start">BioARP</text>
+<text x="374" y="732" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1c2655" text-anchor="start">RPi 4</text>
+<text x="604" y="732" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1c2655" text-anchor="start">VE 0.1</text>
+<text x="754" y="732" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1c2655" text-anchor="start">Audace</text>
+<text x="1004" y="732" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#3b4772" text-anchor="start">Sylvie Hébert (UdeM)</text>
+<text x="1454" y="732" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#aebbea" text-anchor="start">—</text>
+<rect x="120" y="768" width="1680" height="86" rx="0" fill="#fbe3cf"/>
+<rect x="120" y="768" width="9" height="86" rx="0" fill="#e8742a"/>
+<text x="144" y="818" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#e8742a" text-anchor="start">ARP 6</text>
+<text x="374" y="818" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1c2655" text-anchor="start">RPi 5</text>
+<text x="604" y="818" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1c2655" text-anchor="start">VE 0.3</text>
+<text x="754" y="818" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1c2655" text-anchor="start">ProPro + Impulse</text>
+<text x="1004" y="805" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#3b4772" text-anchor="start">InteracSon ×3 · eCoGeers ×1 · Impulse ×1</text>
+<text x="1004" y="831" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#3b4772" text-anchor="start">· ProPro ×3 · BioARP ×1</text>
+<text x="1454" y="818" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#aebbea" text-anchor="start">—</text>
+<g id="Deployment_rules" stroke="#c3ccec" stroke-width="2">
+<line x1="120" y1="338" x2="1800" y2="338" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="120" y1="424" x2="1800" y2="424" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="120" y1="510" x2="1800" y2="510" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="120" y1="596" x2="1800" y2="596" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="120" y1="682" x2="1800" y2="682" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="120" y1="768" x2="1800" y2="768" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="120" y1="854" x2="1800" y2="854" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="350" y1="262" x2="350" y2="854" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="580" y1="262" x2="580" y2="854" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="730" y1="262" x2="730" y2="854" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="980" y1="262" x2="980" y2="854" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+<line x1="1430" y1="262" x2="1430" y2="854" stroke="#c3ccec" stroke-width="2" stroke-linecap="butt"/>
+</g>
+</g>
+<g id="Next_step">
+<circle cx="960" cy="958" r="40" fill="#c3ccec"/>
+<circle cx="960" cy="952" r="40" fill="url(#cOrg)"/>
+<path d="M945,945 L960,962 L975,945" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="960" y="1024" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#3b4772" text-anchor="middle" letter-spacing="1.5">TECHNOLOGY STACK</text>
+</g>
+</svg>

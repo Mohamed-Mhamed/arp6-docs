@@ -1,0 +1,339 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>ARP 6 - signal and algorithm flow</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#f0f3fe"/><stop offset="1" stop-color="#e3e8fa"/>
+  </linearGradient>
+  <linearGradient id="cBlue" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#5a8bf5"/><stop offset="1" stop-color="#2f5bd3"/>
+  </linearGradient>
+  <linearGradient id="cOrg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fba24a"/><stop offset="1" stop-color="#e3691c"/>
+  </linearGradient>
+  <linearGradient id="cNavy" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3b4a8a"/><stop offset="1" stop-color="#1c2655"/>
+  </linearGradient>
+  <linearGradient id="cGreen" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#46b68a"/><stop offset="1" stop-color="#23785a"/>
+  </linearGradient>
+  <linearGradient id="cPurple" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#9b86e8"/><stop offset="1" stop-color="#5a3fc0"/>
+  </linearGradient>
+  <linearGradient id="waveFade" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#7fd0f2"/><stop offset="1" stop-color="#6b4fd0"/>
+  </linearGradient>
+<marker id="m-3f73e8" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="3.4" markerHeight="3.4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3f73e8"/></marker><marker id="m-1c2655" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="3.4" markerHeight="3.4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1c2655"/></marker><marker id="m-8a93b5" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="3.4" markerHeight="3.4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a93b5"/></marker><marker id="m-e8742a" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="3.4" markerHeight="3.4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e8742a"/></marker><marker id="m-23785a" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="3.4" markerHeight="3.4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#23785a"/></marker><marker id="m-fba24a" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="3.4" markerHeight="3.4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fba24a"/></marker></defs>
+<g id="Background">
+<rect x="0" y="0" width="1920" height="1080" rx="0" fill="url(#bg)"/>
+<g id="Background_Iso_Grid" stroke="#d9e0f5" stroke-width="2" fill="none">
+<line x1="0" y1="-2221" x2="1920" y2="-3162"/>
+<line x1="0" y1="-2221" x2="1920" y2="-1280"/>
+<line x1="0" y1="-2121" x2="1920" y2="-3062"/>
+<line x1="0" y1="-2121" x2="1920" y2="-1180"/>
+<line x1="0" y1="-2021" x2="1920" y2="-2962"/>
+<line x1="0" y1="-2021" x2="1920" y2="-1080"/>
+<line x1="0" y1="-1921" x2="1920" y2="-2862"/>
+<line x1="0" y1="-1921" x2="1920" y2="-980"/>
+<line x1="0" y1="-1821" x2="1920" y2="-2762"/>
+<line x1="0" y1="-1821" x2="1920" y2="-880"/>
+<line x1="0" y1="-1721" x2="1920" y2="-2662"/>
+<line x1="0" y1="-1721" x2="1920" y2="-780"/>
+<line x1="0" y1="-1621" x2="1920" y2="-2562"/>
+<line x1="0" y1="-1621" x2="1920" y2="-680"/>
+<line x1="0" y1="-1521" x2="1920" y2="-2462"/>
+<line x1="0" y1="-1521" x2="1920" y2="-580"/>
+<line x1="0" y1="-1421" x2="1920" y2="-2362"/>
+<line x1="0" y1="-1421" x2="1920" y2="-480"/>
+<line x1="0" y1="-1321" x2="1920" y2="-2262"/>
+<line x1="0" y1="-1321" x2="1920" y2="-380"/>
+<line x1="0" y1="-1221" x2="1920" y2="-2162"/>
+<line x1="0" y1="-1221" x2="1920" y2="-280"/>
+<line x1="0" y1="-1121" x2="1920" y2="-2062"/>
+<line x1="0" y1="-1121" x2="1920" y2="-180"/>
+<line x1="0" y1="-1021" x2="1920" y2="-1962"/>
+<line x1="0" y1="-1021" x2="1920" y2="-80"/>
+<line x1="0" y1="-921" x2="1920" y2="-1862"/>
+<line x1="0" y1="-921" x2="1920" y2="20"/>
+<line x1="0" y1="-821" x2="1920" y2="-1762"/>
+<line x1="0" y1="-821" x2="1920" y2="120"/>
+<line x1="0" y1="-721" x2="1920" y2="-1662"/>
+<line x1="0" y1="-721" x2="1920" y2="220"/>
+<line x1="0" y1="-621" x2="1920" y2="-1562"/>
+<line x1="0" y1="-621" x2="1920" y2="320"/>
+<line x1="0" y1="-521" x2="1920" y2="-1462"/>
+<line x1="0" y1="-521" x2="1920" y2="420"/>
+<line x1="0" y1="-421" x2="1920" y2="-1362"/>
+<line x1="0" y1="-421" x2="1920" y2="520"/>
+<line x1="0" y1="-321" x2="1920" y2="-1262"/>
+<line x1="0" y1="-321" x2="1920" y2="620"/>
+<line x1="0" y1="-221" x2="1920" y2="-1162"/>
+<line x1="0" y1="-221" x2="1920" y2="720"/>
+<line x1="0" y1="-121" x2="1920" y2="-1062"/>
+<line x1="0" y1="-121" x2="1920" y2="820"/>
+<line x1="0" y1="-21" x2="1920" y2="-962"/>
+<line x1="0" y1="-21" x2="1920" y2="920"/>
+<line x1="0" y1="79" x2="1920" y2="-862"/>
+<line x1="0" y1="79" x2="1920" y2="1020"/>
+<line x1="0" y1="179" x2="1920" y2="-762"/>
+<line x1="0" y1="179" x2="1920" y2="1120"/>
+<line x1="0" y1="279" x2="1920" y2="-662"/>
+<line x1="0" y1="279" x2="1920" y2="1220"/>
+<line x1="0" y1="379" x2="1920" y2="-562"/>
+<line x1="0" y1="379" x2="1920" y2="1320"/>
+<line x1="0" y1="479" x2="1920" y2="-462"/>
+<line x1="0" y1="479" x2="1920" y2="1420"/>
+<line x1="0" y1="579" x2="1920" y2="-362"/>
+<line x1="0" y1="579" x2="1920" y2="1520"/>
+<line x1="0" y1="679" x2="1920" y2="-262"/>
+<line x1="0" y1="679" x2="1920" y2="1620"/>
+<line x1="0" y1="779" x2="1920" y2="-162"/>
+<line x1="0" y1="779" x2="1920" y2="1720"/>
+<line x1="0" y1="879" x2="1920" y2="-62"/>
+<line x1="0" y1="879" x2="1920" y2="1820"/>
+<line x1="0" y1="979" x2="1920" y2="38"/>
+<line x1="0" y1="979" x2="1920" y2="1920"/>
+<line x1="0" y1="1079" x2="1920" y2="138"/>
+<line x1="0" y1="1079" x2="1920" y2="2020"/>
+<line x1="0" y1="1179" x2="1920" y2="238"/>
+<line x1="0" y1="1179" x2="1920" y2="2120"/>
+<line x1="0" y1="1279" x2="1920" y2="338"/>
+<line x1="0" y1="1279" x2="1920" y2="2220"/>
+<line x1="0" y1="1379" x2="1920" y2="438"/>
+<line x1="0" y1="1379" x2="1920" y2="2320"/>
+<line x1="0" y1="1479" x2="1920" y2="538"/>
+<line x1="0" y1="1479" x2="1920" y2="2420"/>
+<line x1="0" y1="1579" x2="1920" y2="638"/>
+<line x1="0" y1="1579" x2="1920" y2="2520"/>
+<line x1="0" y1="1679" x2="1920" y2="738"/>
+<line x1="0" y1="1679" x2="1920" y2="2620"/>
+<line x1="0" y1="1779" x2="1920" y2="838"/>
+<line x1="0" y1="1779" x2="1920" y2="2720"/>
+<line x1="0" y1="1879" x2="1920" y2="938"/>
+<line x1="0" y1="1879" x2="1920" y2="2820"/>
+<line x1="0" y1="1979" x2="1920" y2="1038"/>
+<line x1="0" y1="1979" x2="1920" y2="2920"/>
+<line x1="0" y1="2079" x2="1920" y2="1138"/>
+<line x1="0" y1="2079" x2="1920" y2="3020"/>
+<line x1="0" y1="2179" x2="1920" y2="1238"/>
+<line x1="0" y1="2179" x2="1920" y2="3120"/>
+</g>
+</g>
+<g id="Title">
+<rect x="60" y="52" width="9" height="58" rx="4" fill="#e8742a"/>
+<text x="88" y="96" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#1c2655" text-anchor="start">ARP 6 · Signal and algorithm flow</text>
+<text x="88" y="134" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#6b7aa8" text-anchor="start">What happens to the sound between the two microphones in each ear and the speaker — and which machine does which part</text>
+</g>
+<g id="Column_headers">
+<text x="60" y="156" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1c2655" text-anchor="start" letter-spacing="1.2">EARPIECE</text>
+<text x="60" y="180" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7aa8" text-anchor="start">×2 · L and R</text>
+<line x1="56" y1="194" x2="206" y2="194" stroke="#c9d2ea" stroke-width="3" stroke-linecap="round"/>
+<text x="290" y="156" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1c2655" text-anchor="start" letter-spacing="1.2">ADAU 1787</text>
+<text x="290" y="180" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7aa8" text-anchor="start">Virtuose Elite 0.3</text>
+<line x1="286" y1="194" x2="566" y2="194" stroke="#c9d2ea" stroke-width="3" stroke-linecap="round"/>
+<text x="650" y="156" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1c2655" text-anchor="start" letter-spacing="1.2">RASPBERRY PI 5</text>
+<text x="650" y="180" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7aa8" text-anchor="start">CPU · Python · state</text>
+<line x1="646" y1="194" x2="1176" y2="194" stroke="#c9d2ea" stroke-width="3" stroke-linecap="round"/>
+<text x="1260" y="156" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1c2655" text-anchor="start" letter-spacing="1.2">AI HAT+2</text>
+<text x="1260" y="180" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7aa8" text-anchor="start">NPU · models in RAM</text>
+<line x1="1256" y1="194" x2="1586" y2="194" stroke="#c9d2ea" stroke-width="3" stroke-linecap="round"/>
+<text x="1670" y="156" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1c2655" text-anchor="start" letter-spacing="1.2">USER</text>
+<text x="1670" y="180" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7aa8" text-anchor="start">app and logs</text>
+<line x1="1666" y1="194" x2="1864" y2="194" stroke="#c9d2ea" stroke-width="3" stroke-linecap="round"/>
+</g>
+<g id="Band_sensing">
+<rect x="56" y="206" width="1808" height="300" rx="22" fill="#e9eefc"/>
+<rect x="76" y="224" width="106.8" height="32" rx="16" fill="#1c2655"/>
+<text x="129.4" y="246" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1.6">SENSING</text>
+<text x="200.8" y="240" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1c2655" text-anchor="start">the body</text>
+<text x="200.8" y="262" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#6b7aa8" text-anchor="start">in-ear microphone → heartbeats → HRV → stress</text>
+<rect x="56" y="334" width="150" height="76" rx="12" fill="#d7deef"/>
+<rect x="56" y="330" width="150" height="76" rx="12" fill="#ffffff" stroke="#c3ccec" stroke-width="2"/>
+<text x="70" y="365" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#1c2655" text-anchor="start">IEM mic</text>
+<text x="70" y="387" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7aa8" text-anchor="start">in-ear</text>
+<rect x="304" y="286" width="280" height="212" rx="16" fill="#e8742a"/>
+<text x="574" y="488" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#e8742a" text-anchor="end">R · right ear</text>
+<rect x="286" y="268" width="280" height="212" rx="16" fill="#3f73e8"/>
+<text x="302" y="466" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#cfe0ff" text-anchor="start">L · left ear · both identical</text>
+<rect x="298" y="282" width="256" height="34" rx="9" fill="#ffffff" opacity="0.92"/>
+<circle cx="315" cy="299" r="10" fill="#2a50bd"/>
+<text x="315" y="304" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="332" y="304" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1c2655" text-anchor="start">amplify + digitise</text>
+<rect x="298" y="324" width="256" height="34" rx="9" fill="#ffffff" opacity="0.92"/>
+<circle cx="315" cy="341" r="10" fill="#2a50bd"/>
+<text x="315" y="346" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<text x="332" y="346" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1c2655" text-anchor="start">DSP · gain, filter, mix</text>
+<rect x="298" y="366" width="256" height="34" rx="9" fill="#ffffff" opacity="0.92"/>
+<circle cx="315" cy="383" r="10" fill="#2a50bd"/>
+<text x="315" y="388" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<text x="332" y="388" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1c2655" text-anchor="start">resample · ASRC</text>
+<rect x="298" y="408" width="256" height="34" rx="9" fill="#ffffff" opacity="0.92"/>
+<circle cx="315" cy="425" r="10" fill="#2a50bd"/>
+<text x="315" y="430" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<text x="332" y="430" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1c2655" text-anchor="start">serialise · SPT</text>
+<rect x="646" y="334" width="160" height="76" rx="12" fill="#d7deef"/>
+<rect x="646" y="330" width="160" height="76" rx="12" fill="#ffffff" stroke="#c3ccec" stroke-width="2"/>
+<text x="660" y="365" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#1c2655" text-anchor="start">artifact</text>
+<text x="660" y="387" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7aa8" text-anchor="start">filter</text>
+<rect x="755.4" y="339" width="40.6" height="22" rx="11" fill="#eaf0ff"/>
+<text x="775.7" y="355" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2a50bd" text-anchor="middle">.py</text>
+<rect x="831" y="334" width="160" height="76" rx="12" fill="#d7deef"/>
+<rect x="831" y="330" width="160" height="76" rx="12" fill="#ffffff" stroke="#c3ccec" stroke-width="2"/>
+<text x="845" y="365" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#1c2655" text-anchor="start">tempbeat</text>
+<text x="845" y="387" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7aa8" text-anchor="start">beat detection</text>
+<rect x="940.4" y="339" width="40.6" height="22" rx="11" fill="#eaf0ff"/>
+<text x="960.7" y="355" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2a50bd" text-anchor="middle">.py</text>
+<rect x="1016" y="334" width="160" height="76" rx="12" fill="#d7deef"/>
+<rect x="1016" y="330" width="160" height="76" rx="12" fill="#ffffff" stroke="#c3ccec" stroke-width="2"/>
+<text x="1030" y="365" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#1c2655" text-anchor="start">neurokit2</text>
+<text x="1030" y="387" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7aa8" text-anchor="start">HRV extraction</text>
+<rect x="1125.4" y="339" width="40.6" height="22" rx="11" fill="#eaf0ff"/>
+<text x="1145.7" y="355" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2a50bd" text-anchor="middle">.py</text>
+<rect x="1256" y="304" width="330" height="74" rx="12" fill="#d7deef"/>
+<rect x="1256" y="300" width="330" height="74" rx="12" fill="#1b2250"/>
+<text x="1270" y="334" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="start">peak-correction</text>
+<text x="1270" y="356" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#ffffff" text-anchor="start">recovers lost beats</text>
+<rect x="1527.2" y="309" width="48.8" height="22" rx="11" fill="#eaf0ff"/>
+<text x="1551.6" y="325" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2a50bd" text-anchor="middle">.hef</text>
+<rect x="1256" y="404" width="330" height="74" rx="12" fill="#d7deef"/>
+<rect x="1256" y="400" width="330" height="74" rx="12" fill="#1b2250"/>
+<text x="1270" y="434" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="start">stress model</text>
+<text x="1270" y="456" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#ffffff" text-anchor="start">HRV → stress index</text>
+<rect x="1527.2" y="409" width="48.8" height="22" rx="11" fill="#eaf0ff"/>
+<text x="1551.6" y="425" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2a50bd" text-anchor="middle">.hef</text>
+<rect x="1666" y="300" width="198" height="174" rx="14" fill="#ffffff" stroke="#c3ccec" stroke-width="2"/>
+<text x="1682" y="332" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#23785a" text-anchor="start" letter-spacing="1.2">VITALS OUT</text>
+<circle cx="1690" cy="366" r="6" fill="#46b68a"/>
+<text x="1706" y="371" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#1c2655" text-anchor="start">displayed</text>
+<text x="1784" y="371" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7aa8" text-anchor="start">in the app</text>
+<circle cx="1690" cy="402" r="6" fill="#46b68a"/>
+<text x="1706" y="407" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#1c2655" text-anchor="start">stored</text>
+<text x="1784" y="407" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7aa8" text-anchor="start">.csv · .json</text>
+<circle cx="1690" cy="438" r="6" fill="#46b68a"/>
+<text x="1706" y="443" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#1c2655" text-anchor="start">streamed</text>
+<text x="1784" y="443" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7aa8" text-anchor="start">over Wi-Fi</text>
+<path d="M212,368 L278,368" fill="none" stroke="#3f73e8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-3f73e8)"/>
+<rect x="196.5" y="339" width="97" height="23" rx="11" fill="#ffffff" opacity="0.93"/>
+<text x="245" y="355" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#3f73e8" text-anchor="middle" letter-spacing="0.7">IEM_ANALOG</text>
+<path d="M600,368 L638,368" fill="none" stroke="#1c2655" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-1c2655)"/>
+<rect x="577.9" y="337" width="82.2" height="24" rx="12" fill="#1c2655"/>
+<text x="619" y="354" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.6">I2S_SDI</text>
+<path d="M812,368 L829,368" fill="none" stroke="#8a93b5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-8a93b5)" stroke-dasharray="9 7"/>
+<path d="M997,368 L1014,368" fill="none" stroke="#8a93b5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-8a93b5)" stroke-dasharray="9 7"/>
+<path d="M1182,334 L1248,334" fill="none" stroke="#8a93b5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-8a93b5)" stroke-dasharray="9 7"/>
+<rect x="1170.45" y="305" width="89.1" height="23" rx="11" fill="#ffffff" opacity="0.93"/>
+<text x="1215" y="321" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#5f6a8e" text-anchor="middle" letter-spacing="0.7">BEATS/HRV</text>
+<path d="M1248,444 L1182,444" fill="none" stroke="#e8742a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-e8742a)" stroke-dasharray="9 7"/>
+<rect x="1182.3" y="415" width="65.4" height="23" rx="11" fill="#ffffff" opacity="0.93"/>
+<text x="1215" y="431" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#5f6a8e" text-anchor="middle" letter-spacing="0.7">STRESS</text>
+<path d="M1096,326 L1096,266 L1765,266 L1765,296" fill="none" stroke="#23785a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-23785a)" stroke-dasharray="9 7"/>
+<rect x="1371.5" y="246" width="97" height="23" rx="11" fill="#ffffff" opacity="0.93"/>
+<text x="1420" y="262" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#23785a" text-anchor="middle" letter-spacing="0.7">VITALS_LOG</text>
+</g>
+<g id="Band_decision">
+<rect x="646" y="522" width="1218" height="118" rx="20" fill="#fff1e4"/>
+<rect x="646" y="522" width="1218" height="118" rx="20" fill="none" stroke="#e8742a" stroke-width="3"/>
+<rect x="700" y="552" width="330" height="66" rx="12" fill="#d7deef"/>
+<rect x="700" y="548" width="330" height="66" rx="12" fill="#e8742a"/>
+<text x="714" y="587" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="start">decide what to suppress</text>
+<rect x="1098" y="552" width="300" height="66" rx="12" fill="#d7deef"/>
+<rect x="1098" y="548" width="300" height="66" rx="12" fill="#ffffff" stroke="#c3ccec" stroke-width="2"/>
+<text x="1112" y="578" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#1c2655" text-anchor="start">personalization</text>
+<text x="1112" y="600" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7aa8" text-anchor="start">learns the user</text>
+<rect x="1339.2" y="557" width="48.8" height="22" rx="11" fill="#eaf0ff"/>
+<text x="1363.6" y="573" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2a50bd" text-anchor="middle">.pkl</text>
+<rect x="1600" y="552" width="244" height="66" rx="12" fill="#d7deef"/>
+<rect x="1600" y="548" width="244" height="66" rx="12" fill="#eef3ff" stroke="#c3ccec" stroke-width="2"/>
+<text x="1614" y="578" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#1c2655" text-anchor="start">ARP app</text>
+<text x="1614" y="600" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7aa8" text-anchor="start">user logs</text>
+<path d="M1094,581 L1036,581" fill="none" stroke="#e8742a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-e8742a)" stroke-dasharray="9 7"/>
+<path d="M1596,581 L1404,581" fill="none" stroke="#8a93b5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-8a93b5)" stroke-dasharray="9 7"/>
+<rect x="1455.45" y="552" width="89.1" height="23" rx="11" fill="#ffffff" opacity="0.93"/>
+<text x="1500" y="568" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#5f6a8e" text-anchor="middle" letter-spacing="0.7">USER_LOGS</text>
+<path d="M1296,478 L1296,500 L865,500 L865,542" fill="none" stroke="#e8742a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-e8742a)" stroke-dasharray="9 7"/>
+<rect x="983.6" y="480" width="112.8" height="23" rx="11" fill="#ffffff" opacity="0.93"/>
+<text x="1040" y="496" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#e8742a" text-anchor="middle" letter-spacing="0.7">STRESS_INDEX</text>
+</g>
+<g id="Band_acoustic">
+<rect x="56" y="656" width="1808" height="320" rx="22" fill="#e8f3ef"/>
+<rect x="76" y="674" width="117.2" height="32" rx="16" fill="#23785a"/>
+<text x="134.6" y="696" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1.6">ACOUSTIC</text>
+<text x="211.2" y="690" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1c2655" text-anchor="start">the world</text>
+<text x="211.2" y="712" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#6b7aa8" text-anchor="start">outer-ear microphone → trigger sounds → suppression at the speaker</text>
+<rect x="56" y="752" width="150" height="70" rx="12" fill="#d7deef"/>
+<rect x="56" y="748" width="150" height="70" rx="12" fill="#ffffff" stroke="#c3ccec" stroke-width="2"/>
+<text x="70" y="780" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#1c2655" text-anchor="start">OEM mic</text>
+<text x="70" y="802" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6b7aa8" text-anchor="start">outer-ear</text>
+<rect x="56" y="880" width="150" height="70" rx="12" fill="#d7deef"/>
+<rect x="56" y="876" width="150" height="70" rx="12" fill="#1b2250"/>
+<text x="70" y="908" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="start">Speaker</text>
+<text x="70" y="930" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#ffffff" text-anchor="start">playback</text>
+<rect x="286" y="748" width="280" height="70" rx="14" fill="#dbe4fb" stroke="#aebbea" stroke-width="2"/>
+<text x="302" y="780" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#2a50bd" text-anchor="start">capture chain</text>
+<text x="302" y="802" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7aa8" text-anchor="start">as in the band above</text>
+<rect x="286" y="874" width="280" height="84" rx="12" fill="#d7deef"/>
+<rect x="286" y="870" width="280" height="84" rx="12" fill="#3f73e8"/>
+<text x="300" y="909" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="start">DSP applies suppression</text>
+<text x="300" y="931" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#ffffff" text-anchor="start">→ DAC → speaker</text>
+<rect x="646" y="752" width="240" height="70" rx="12" fill="#d7deef"/>
+<rect x="646" y="748" width="240" height="70" rx="12" fill="#ffffff" stroke="#c3ccec" stroke-width="2"/>
+<text x="660" y="789" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#1c2655" text-anchor="start">trigger detection</text>
+<rect x="835.4" y="757" width="40.6" height="22" rx="11" fill="#eaf0ff"/>
+<text x="855.7" y="773" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2a50bd" text-anchor="middle">.py</text>
+<rect x="916" y="752" width="260" height="70" rx="12" fill="#d7deef"/>
+<rect x="916" y="748" width="260" height="70" rx="12" fill="#ffffff" stroke="#c3ccec" stroke-width="2"/>
+<text x="930" y="789" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#1c2655" text-anchor="start">suppression control</text>
+<rect x="1125.4" y="757" width="40.6" height="22" rx="11" fill="#eaf0ff"/>
+<text x="1145.7" y="773" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2a50bd" text-anchor="middle">.py</text>
+<rect x="1256" y="752" width="330" height="74" rx="12" fill="#d7deef"/>
+<rect x="1256" y="748" width="330" height="74" rx="12" fill="#1b2250"/>
+<text x="1270" y="782" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="start">sound classifier</text>
+<text x="1270" y="804" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#ffffff" text-anchor="start">what is this sound</text>
+<rect x="1527.2" y="757" width="48.8" height="22" rx="11" fill="#eaf0ff"/>
+<text x="1551.6" y="773" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2a50bd" text-anchor="middle">.hef</text>
+<path d="M212,783 L278,783" fill="none" stroke="#fba24a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-fba24a)"/>
+<rect x="196.5" y="754" width="97" height="23" rx="11" fill="#ffffff" opacity="0.93"/>
+<text x="245" y="770" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#fba24a" text-anchor="middle" letter-spacing="0.7">OEM_ANALOG</text>
+<path d="M572,783 L638,783" fill="none" stroke="#1c2655" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-1c2655)"/>
+<rect x="563.9" y="752" width="82.2" height="24" rx="12" fill="#1c2655"/>
+<text x="605" y="769" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.6">I2S_SDI</text>
+<path d="M892,783 L914,783" fill="none" stroke="#8a93b5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-8a93b5)" stroke-dasharray="9 7"/>
+<path d="M1182,736 L1248,736" fill="none" stroke="#8a93b5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-8a93b5)" stroke-dasharray="9 7"/>
+<rect x="1186.25" y="707" width="57.5" height="23" rx="11" fill="#ffffff" opacity="0.93"/>
+<text x="1215" y="723" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#5f6a8e" text-anchor="middle" letter-spacing="0.7">AUDIO</text>
+<path d="M1248,846 L1182,846" fill="none" stroke="#e8742a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-e8742a)" stroke-dasharray="9 7"/>
+<rect x="1162.55" y="817" width="104.9" height="23" rx="11" fill="#ffffff" opacity="0.93"/>
+<text x="1215" y="833" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#5f6a8e" text-anchor="middle" letter-spacing="0.7">AUDIO_CLASS</text>
+<path d="M1046,822 L1046,912 L572,912" fill="none" stroke="#1c2655" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-1c2655)"/>
+<rect x="783.35" y="890" width="73.3" height="23" rx="11" fill="#ffffff" opacity="0.93"/>
+<text x="820" y="906" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#1c2655" text-anchor="middle" letter-spacing="0.7">I2S_SDO</text>
+<path d="M278,912 L212,912" fill="none" stroke="#3f73e8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-3f73e8)"/>
+<rect x="196.5" y="883" width="97" height="23" rx="11" fill="#ffffff" opacity="0.93"/>
+<text x="245" y="899" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#3f73e8" text-anchor="middle" letter-spacing="0.7">SPK_ANALOG</text>
+</g>
+<g id="Suppress_command">
+<path d="M865,636 L865,700 L1046,700 L1046,744" fill="none" stroke="#e8742a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m-e8742a)" stroke-dasharray="9 7"/>
+<rect x="899.65" y="678" width="120.7" height="23" rx="11" fill="#ffffff" opacity="0.93"/>
+<text x="960" y="694" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#e8742a" text-anchor="middle" letter-spacing="0.7">SUPPRESS_CTRL</text>
+</g>
+<g id="Legend">
+<rect x="56" y="996" width="1808" height="54" rx="16" fill="#ffffff" stroke="#c3ccec" stroke-width="2"/>
+<line x1="80" y1="1024" x2="124" y2="1024" stroke="#3f73e8" stroke-width="7" stroke-linecap="round"/>
+<text x="134" y="1029" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1c2655" text-anchor="start">analog signal</text>
+<rect x="268" y="1009" width="58" height="23" rx="11" fill="#1c2655"/>
+<text x="297" y="1025" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">BUS</text>
+<text x="338" y="1029" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1c2655" text-anchor="start">digital bus</text>
+<line x1="456" y1="1024" x2="500" y2="1024" stroke="#8a93b5" stroke-width="3" stroke-linecap="round" stroke-dasharray="9 7"/>
+<text x="510" y="1029" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1c2655" text-anchor="start">data / control</text>
+<text x="672" y="1029" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#e8742a" text-anchor="start" letter-spacing="1.4">FILES</text>
+<text x="740" y="1029" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1c2655" text-anchor="start">Raspberry Pi 5:</text>
+<text x="880" y="1029" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#3b4772" text-anchor="start">.py  .json  .csv  .pkl  .wav</text>
+<text x="1150" y="1029" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1c2655" text-anchor="start">AI HAT+2:</text>
+<text x="1246" y="1029" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#3b4772" text-anchor="start">.hef  .onnx  .json</text>
+<text x="1500" y="1029" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#e8742a" text-anchor="start">The in-ear mic decides what the outer-ear mic suppresses.</text>
+</g>
+<text x="506" y="162" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#e8742a" text-anchor="end" letter-spacing="1.2">detail</text>
+<g id="Next_step">
+<circle cx="540" cy="156" r="22" fill="url(#cOrg)"/>
+<path d="M531,151 L540,161 L549,151" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
